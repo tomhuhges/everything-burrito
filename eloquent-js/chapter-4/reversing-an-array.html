@@ -1,0 +1,53 @@
+
+
+<script>
+
+	function reverseArray( array ) {
+
+		var newArray = [];
+		var i = array.length -1;
+
+		while ( i >= 0 ) {
+
+			newArray.push(array[i]);
+
+			i--;
+
+		}
+
+		return newArray;
+
+	}
+
+	console.log( reverseArray(["style.","in","back","come","to","going","is","like","you","gum","That"]) );
+
+
+
+
+	function reverseArrayInPlace( array ) {
+
+		var len = array.length;
+
+		for ( var i=0;i<len/2;i++) {
+
+			var pop = array[i];
+			array[i] = array[len-i-1];
+			array[len-i-1] = pop;
+
+		}
+
+		return array;
+
+	}
+
+	console.log( reverseArrayInPlace(["style.","in","back","come","to","going","is","like","you","gum","That"]) );
+
+
+	/*
+
+	reverseArray() is likely to be more useful because it returns a new variable, and doesn't change the value of existing variables. reverseArray() allows other functions to use array in its initial state after the function has run, while reverseArrayInPlace() has the side-effect of having modified the variable once it has run.
+
+	*/
+
+</script>
+
