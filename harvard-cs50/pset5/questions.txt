@@ -1,0 +1,20 @@
+0.  It's a lung disease caused by inhaling small particles of silicon from volcanic dust. It's also the longest word in the OED.
+1.  It returns current resource usage measures for the process that calls it, for all the children of the process that calls it, or the process thread.
+2.  17
+3.  When a variable is passed by value, it is copied for use within the function. When the variable contains something large like a struct with multiple members, it makes sense to just pass the pointer if you know you're not going to change any values, or if changing values isn't important. calculate() converts (casts) the pointer reference to a const for use in the function. 
+4.  Main() first loads the dictionary file, calculates the time it took and opens the text file indicated in the command line arguments, throwing errors if the files don't exist or arguments are incorrect.
+    It then declares an index to start at 0, and a counter for each word and each misspelling it finds. it also declares an array called word, which is 46 bytes in size - the const LENGTH (45), +1.
+    The for loop sets int c to the first character in the file, incrementing each time to the next character until the value of c indicates the end of the file.
+    If c (the current character) is an alphabetic character, or an apostrophe in any other position than at the beginning of the word, its value is added to the word array/string at the current index value and index is incremented.
+    If index reaches above 45 (the longest word length) and the current character is still alphabetic/apostrophe, we know the word isn't in any dictionary. The while loop skips through the following characters until it hits a non-alphabetic one or the end of the file, and sets the index back to 0 to indicate the start of a new word.
+    If c is a numeric character, similarly we know it isn't a valid word so another while loop skips the following characters until it hits a non-alphanumeric one or the end of the file, and sets the index back to 0 to indicate the start of a new word.
+    Then, it checks if the index is 0 (the indication of the start of a new word), terminates the current word string with a null byte, and increments the words counter. It then assigns the reversed return value of check() on the word string to misspelled (if check() returns false, misspelled is true).
+    After calculating the time of the check() process, it printf()s the misspelled word and increments the misspellings counter by 1 if misspelled is true.
+    It then calculates the size of the dictionary and unloads the file, calculating the time it takes to perform each.
+    Finally, it prints out statistics including number of misspellings and timings for the timed functions.
+5.  fscanf() only checks if the format/type of each string matches that specified, not if it contains invalid characters like non-alphabetic ones. We also don't know how many words are in each text file.
+6.  It lets anyone working with your code know that the values aren't modified inside the function. The compiler may possibly make optimizations if it knows the value won't be changed.
+7.  A trie, with a boolean value is_word to indicate the end of a valid word path, and an array of 27 pointers to potential tries (one each for 26 alphabetical chars and one apostrophe).
+8.  About 0.15 seconds
+9.  TODO
+10. TODO

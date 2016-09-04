@@ -1,0 +1,19 @@
+0.  BMP supports up to >4 billion colors (32bpp), GIF supports 256 colors, JPEG and PNG both support 16 million
+1.  GIF
+2.  Lossy compression permanently eliminates some data from the original file to reduce its size. Lossless compression converts data to a form that takes up less memory and that can be reverted later on. 
+3.  JPEG and GIF are lossy compressed formats.
+4.  The first character of the filename is modified to signal the memory can be re-used. It then marks the memory cluster used by the file as free. 
+5.  Overwrite every byte of the file with a null byte.
+6.  stdint.h is a helper library that defines integer types of different sizes.
+7.  Different systems have different implementations for C's integer types. The new types defined in stdint.h make sure that the variable is a fixed number of bits across all systems.
+8.  1, 4, 4, 2
+9.  BM, 66 77 or 42 4d
+10. bfSize is the size of the entire file. biSize is the size of the BITMAPINFOHEADER struct.
+11. The bitmap gets drawn from the top-right-most corner, rather than the lower-left-most.
+12. biBitCount
+13. It may return NULL if the available stack + heap memory becomes full
+14. fread's third argument is the number of elements of the size passed as the 2nd argument. Since we know the size of the data block to read, we can pass that as the second argument and run fread once to read the entire data block.
+15. 1
+16. While a file stream is open, fseek moves the current read or write position to a designated offset from the beginning of the file, the end of the file or the current position.
+17. SEEK_CUR is an argument passed to fseek that tells it to offset from the current position.
+18. Rick Astley
