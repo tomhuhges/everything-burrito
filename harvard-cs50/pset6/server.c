@@ -444,8 +444,29 @@ char* htmlspecialchars(const char* s)
  */
 char* indexes(const char* path)
 {
-    // TODO
+    
+    // get length of path
+    int path_size = strlen(path);
+    
+    // create new string as path + index.php
+    char* php_path = malloc(path_size + 11);
+    strcpy(php_path, path);
+    strcat(php_path, "index.php");
+    
+    // if index.php exists, return path
+    if (access(php_path, F_OK) == 0) return php_path;
+    
+    // if not, create new string as path + index.html
+    char* html_path = malloc(path_size + 12);
+    strcpy(html_path, path);
+    strcat(html_path, "index.html");
+    
+    // if index.html exists, return path
+    if (access(html_path, F_OK) == 0) return html_path;
+    
+    // else
     return NULL;
+    
 }
 
 /**
@@ -609,8 +630,31 @@ void list(const char* path)
  */
 bool load(FILE* file, BYTE** content, size_t* length)
 {
-    // TODO
+    
+    *content = NULL;
+    *length = 0;
+    
+    // initialize buffer
+    char* buffer[1];
+
+    // read from file 1 byte at a time into buffer
+    while (fread(buffer, 1, 1, file) != 0)
+    {
+        // realloc 2 bytes (1 for new char, 1 for null byte)
+        *content = realloc(*content, *length + 2);
+        memcpy(*content + *length, buffer, 1);
+        *length +=1;
+
+        // add null byte
+        *(*content + *length) = '\0';
+        
+    }
+    
+    // done when EOF
+    if (feof(file)) return true;
+    
     return false;
+    
 }
 
 /**
@@ -618,8 +662,29 @@ bool load(FILE* file, BYTE** content, size_t* length)
  */
 const char* lookup(const char* path)
 {
-    // TODO
-    return NULL;
+    
+    char* ext = strrchr(path, '.');
+    
+    if ( strcasecmp(ext, ".css") == 0) {
+        return "text/css";
+    } else if (  strcasecmp(ext, ".html") == 0) {
+        return "text/html";
+    } else if (  strcasecmp(ext, ".gif") == 0) {
+        return "image/gif";
+    } else if (  strcasecmp(ext, ".ico") == 0) {
+        return "image/x-icon";
+    } else if (  strcasecmp(ext, ".jpg") == 0) {
+        return "image/jpeg";
+    } else if (  strcasecmp(ext, ".js") == 0) {
+        return "text/javascript";
+    } else if (  strcasecmp(ext, ".php") == 0) {
+        return "text/x-php";
+    } else if (  strcasecmp(ext, ".png") == 0) {
+        return "image/png";
+    } else {
+        return NULL;
+    }
+    
 }
 
 /**
@@ -629,9 +694,94 @@ const char* lookup(const char* path)
  */
 bool parse(const char* line, char* abs_path, char* query)
 {
-    // TODO
-    error(501);
-    return false;
+    
+    // check if line is the correct format
+    
+    // has 3 elements?
+    int length = strlen(line);
+    int elements = 0;
+    for (int i=0;i<=length;i++){
+        if (line[i] == ' ' || line[i] == '\0') elements++;
+    }
+    if (elements != 3) {
+        error(400);
+        return false;
+    }
+    
+    // ends in \r\n?
+    if ( strcmp( &line[length-2], "\r\n") != 0 ) {
+        error(400);
+        return false;
+    }
+    
+    // make a copy of the line so we can work with it
+    
+    char linecopy[length];           
+    memset(linecopy, '\0', sizeof(linecopy)); 
+    strncpy(linecopy, line, length-2);      // ( -2 because we don't need to copy the \r\n)
+    
+    // split line into method, request-target and HTTP version
+    // by replacing whitespace with null bytes
+    
+    char* method = linecopy;                // sets method pointer to the start of our line copy
+    
+    char* target = strchr(linecopy, ' ');   // sets target pointer to first whitespace
+    *target = '\0';                         // replace value at pointer (whitespace) with a null byte
+    target++;                               // increment pointer address to char after whitespace
+    
+    char* version = strchr(target, ' ');    // repeat for HTTP version
+    *version = '\0';
+    version++;
+    
+    // check if elements are correct format
+    
+    // method = GET?
+    if (strcmp( method, "GET" ) != 0) {
+        error(405);
+        return false;
+    }
+    // target begins with /?
+    if (strncmp( target, "/", 1 ) != 0) {
+        error(501);
+        return false;
+    }
+    // target does not contain '"'?
+    if (strstr( target, "\"" ) != NULL) {
+        error(400);
+        return false;
+    }
+    // version = HTTP/1.1?
+    if (strcmp( version, "HTTP/1.1" )) {
+        error(505);
+        return false;
+    }
+    
+    // check for query
+    char* q = strchr( target, '?' );
+    
+    // has question mark?
+    if ( q == NULL ) strcpy(query, "\0");
+    
+    else {
+        
+        // anything after the question mark?
+        if ( q+1 == NULL ) strcpy(query, "\0");
+        
+        else {
+            // replace ? with null byte
+            *q = '\0';
+            q++;
+            
+            // save abs_path + query
+            strcpy(query, q);
+        }
+            
+    }
+    
+    strcpy(abs_path, target);
+    
+    return true;
+    
 }
 
 /**
