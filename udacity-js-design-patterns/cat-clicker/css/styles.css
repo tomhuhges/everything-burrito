@@ -1,0 +1,85 @@
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+
+body, html {
+	margin: 0;
+	display: flex;
+	font-family: "menlo";
+	color: #00f;
+	font-size: 20px;
+}
+
+main {
+	width: 100vw;
+	display:flex;
+}
+
+img {
+	width: 100%;
+	cursor: pointer;
+}
+
+p.header, p.title {
+	text-align: center;
+}
+
+p.score {
+	text-align: right;
+}
+
+ul {
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+li {
+	list-style: none;
+	background: #fff;
+	color: #00f;
+	padding: 10px 20px;
+    margin: 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+#catmenu {
+	padding: 100px;
+	background: #00f;
+	color: #fff;
+	min-height: 100vh;
+	flex: 0 1 33%;
+}
+
+#catsdisplay {
+	padding: 100px;
+	flex: 1 1 66%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.empty-state {
+	color: #ccc;
+}
+
+p#edit, p#cancel, p#save {
+	display: inline-block;
+	background: #00f;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+input {
+    padding: 10px 20px;
+}
+
