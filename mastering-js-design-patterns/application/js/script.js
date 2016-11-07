@@ -8,6 +8,10 @@
 		id: 2,
 		title: 'Yung Lean - AF1s',
 		duration: 272
+	}, {
+		id: 3,
+		title: '21 Savage - No Heart',
+		duration: 142
 	}];
 
 	var tracksContainer = document.getElementById("tracks");
@@ -15,29 +19,17 @@
 	var i, row, col1, col2, col3, col4, button1icon, button1, button2icon, button2;
 
 	for ( i=0; i<tracks.length; i++ ) {
-		row = tracksContainer.insertRow(i);
-		col1 = row.insertCell(0);
-		col2 = row.insertCell(1);
-		col3 = row.insertCell(2);
-		col4 = row.insertCell(3);
+		row = D$.create('tr', {parent: tracksContainer});
+		col1 = D$.create('td', {parent: row, text: tracks[i].id});
+		col2 = D$.create('td', {parent: row, text: tracks[i].title});
+		col3 = D$.create('td', {parent: row, text: tracks[i].duration});
+		col4 = D$.create('td', {parent: row});
 
-		col1.innerHTML = tracks[i].id;
-		col2.innerHTML = tracks[i].title;
-		col3.innerHTML = tracks[i].duration;
+		button1 = D$.create('button', {parent: col4, className: 'btn btn-xs btn-danger'});
+		D$.create('span', {parent: button1, className: 'glyphicon glyphicon-remove'});
 
-		button1icon = document.createElement('span');
-		button1icon.className = 'glyphicon glyphicon-remove';
-		button1 = document.createElement('button');
-		button1.className = 'btn btn-xs btn-danger';
-		button1.appendChild(button1icon);
-		col4.appendChild(button1);
-
-		button2icon = document.createElement('span');
-		button2icon.className = 'glyphicon glyphicon-play';
-		button2 = document.createElement('button');
-		button2.className = 'btn btn-xs btn-primary';
-		button2.appendChild(button2icon);
-		col4.appendChild(button2);
+		button2 = D$.create('button', {parent: col4, className: 'btn btn-xs btn-primary'});
+		D$.create('span', {parent: button2, className: 'glyphicon glyphicon-play'});
 	}
 
 	var playerProgressBar = (function(){
@@ -84,7 +76,7 @@
 	
 			playerState.isPlaying = true;
 			playerProgressBar.progress = playerState.progress / playerState.track.duration;
-			playerState.interval = setInterval(function(){
+			playerState.interval = Timer.setInterval(0.5, function(){
 				playerState.progress += 0.5;
 	
 				if ( playerState.progress <= playerState.track.duration ) {
@@ -96,7 +88,7 @@
 	
 					playNextTrack();
 				}
-			}, 500);
+			});
 		}
 	
 		function playNextTrack() {
@@ -117,7 +109,7 @@
 			playerState.interval = 0;
 		}
 	
-		playerButtonPlay.addEventListener('click', function(e){
+		D$.on(playerButtonPlay, 'click', function(e){
 			e.preventDefault();
 			if (playerState.isPlaying) {
 				pauseTrack();
@@ -138,8 +130,8 @@
 	})();
 
 	playerController.play();
-	setTimeout(function(){
+	Timer.setTimeout(2, function(){
 		playerController.pause();
-	}, 2000);
+	});
 
 })();
