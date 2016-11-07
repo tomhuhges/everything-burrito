@@ -60,8 +60,11 @@ similar, to `facade`, the adapter pattern wraps one function in another in order
 ```js
 /* the adapter below lets you call a
 setTimeout with seconds instead of milliseconds,
-and places the timing as the first argument */
+and places the timing as the first argument
+for ease of use*/
 function setTimeoutAdapter( seconds, callback ) {
 	return setTimeout(callback, seconds * 1000 );
 }
+
+setTimeoutAdapter( 5, function(){alert('hello 5 seconds later!'')});
 ```
