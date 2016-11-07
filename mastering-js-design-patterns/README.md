@@ -29,7 +29,7 @@ var module = (function(){
 	var lastName = "Smith";    
 	return {
 		get fullName(){
-			return moduleFullName
+			return firstName + " " + lastName;
 		},
 		set fullName(value){
 			value.split(" ");
