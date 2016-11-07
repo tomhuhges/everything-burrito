@@ -18,21 +18,23 @@ var recurringAction = setInterval(function(){
 
 ### getters and setters
 
-when creating modules, you can expose variables with `get` and `set` without giving outside code/users access any other functionality contained within the module. those variable values can be retrieved or assigned without 
+when creating modules, you can expose variables with `get` and `set` without giving outside code/users access any other functionality contained within the module. those variable values can be retrieved or assigned without calling any other methods that are called to create them.
 
 ##### usage
 
 module:  
 ```js
 var module = (function(){
-	var moduleSetting = "Bob";  
-	// probably do more interesting stuff with moduleSetting  
+	var firstName = "Bob";
+	var lastName = "Smith";    
 	return {
-		get setting(){
-			return moduleSetting
+		get fullName(){
+			return moduleFullName
 		},
-		set setting(value){
-			moduleSetting = value;
+		set fullName(value){
+			value.split(" ");
+			firstName = ( value[0] || "" );
+			lastName = ( value[1] || "" );
 		}
 	}
 })();
@@ -40,7 +42,7 @@ var module = (function(){
 
 outside use:  
 ```js
-console.log(module.setting); // "Bob"
-module.setting = "Jim";
-console.log(module.setting); // "Jim"
+console.log(module.fullName); // "Bob Smith"
+module.fullName = "Jim Bloggs";
+console.log(module.fullName); // "Jim Bloggs"
 ```
