@@ -26,7 +26,8 @@ module:
 ```js
 var module = (function(){
 	var firstName = "Bob";
-	var lastName = "Smith";    
+	var lastName = "Smith";
+
 	return {
 		get fullName(){
 			return firstName + " " + lastName;
@@ -62,6 +63,7 @@ similar, to `facade`, the adapter pattern wraps one function in another in order
 setTimeout with seconds instead of milliseconds,
 and places the timing as the first argument
 for ease of use*/
+
 function setTimeoutAdapter( seconds, callback ) {
 	return setTimeout(callback, seconds * 1000 );
 }
