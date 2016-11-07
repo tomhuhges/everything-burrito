@@ -52,6 +52,22 @@ console.log(module.fullName); // "Jim Bloggs"
 
 facades abstract complicated code into a single function with a simple interface, for example a function that allows users to pass in an element, event, and callback to add an event listener. inside, the function checks to see which method is available depending on the browser version and calls the relevant one. the user doesn't have to update three separate function calls when maintaining the code. facades are typically created when dealing with multiple apis to do one job.
 
+##### usage
+
+```js
+function addEvent(element, type, callback) {
+	if ( window.addEventListener ) {
+		element.addEventListener(type, callback);
+	} else if ( window.attachEvent ) {
+		element.attachEvent("on" + type, callback);
+	} else {
+		element["on" + type] = callback;
+	}
+}
+
+addEvent(myelement, "click", alert("myelement was clicked!")); // calls the relevant function under the hood
+```
+
 ### adapter pattern
 
 similar, to `facade`, the adapter pattern wraps one function in another in order to make it more useable or suitable.
