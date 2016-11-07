@@ -66,5 +66,5 @@ function setTimeoutAdapter( seconds, callback ) {
 	return setTimeout(callback, seconds * 1000 );
 }
 
-setTimeoutAdapter( 5, function(){ alert("hello 5 seconds later!"); });
+setTimeoutAdapter( 5, alert("hello 5 seconds later!") );
 ```
