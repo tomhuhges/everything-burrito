@@ -1,5 +1,13 @@
 ## things i learned on this course
 
+- [clearInterval()]('#clearinterval')
+- [getters and setters]('#getters-and-setters')
+- [facade pattern]('#facade-pattern')
+- [adapter pattern]('#adapter-pattern')
+- [namespacing]('#namespacing')
+- [amd/require.js]('#amdrequirejs')
+- [observer/pubsub pattern]('#observerpubsub-pattern')
+
 ----
 
 ### clearInterval()
