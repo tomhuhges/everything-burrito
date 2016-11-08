@@ -1,0 +1,2 @@
+PlayerJS.utils = {};
+
