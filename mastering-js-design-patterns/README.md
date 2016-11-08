@@ -70,15 +70,18 @@ addEvent(myelement, "click", alert("myelement was clicked!")); // calls the rele
 
 ### adapter pattern
 
-similar, to `facade`, the adapter pattern wraps one function in another in order to make it more useable or suitable.
+similar, to `facade`, the adapter pattern wraps one function in another in order to make it more useable or suitable. Most often it's used to provide an interface to a function where the existing one is incompatible.
 
 ##### usage
 
 ```js
 /* the adapter below lets you call a
 setTimeout with seconds instead of milliseconds,
-and places the timing as the first argument
-for ease of use*/
+and places the timing as the first argument.
+the below is probably not recommended, given
+most developers will be familiar with standard
+setTimeout but not your own implementation,
+whether it's more pleasant to read or not. */
 
 function setTimeoutAdapter( seconds, callback ) {
 	return setTimeout(callback, seconds * 1000 );
@@ -86,3 +89,26 @@ function setTimeoutAdapter( seconds, callback ) {
 
 setTimeoutAdapter( 5, alert("hello 5 seconds later!") );
 ```
+
+### namespacing
+
+for this exercise we split the functionality of the main file into an MVC structure, with a main PlayerJS object, and separate folders and files reflecting separate methods and properties of the PlayerJS object. The directory structure looked like this:
+
+```
+js/
+└─ player/				// main functionality
+   └─ index.js
+   └─ controller.js
+   └─ progress.js
+└─ queue/				// essentially the model, and the view of the model
+   └─ index.js
+   └─ collection.js
+   └─ collectionview.js
+└─ utils				// event handlers and helper functions
+   └─ index.js
+   └─ dom.js
+   └─ timer.js
+└─ index.js
+└─ app.js
+```
+
