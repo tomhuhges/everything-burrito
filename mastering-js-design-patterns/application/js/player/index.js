@@ -1,1 +1,0 @@
-PlayerJS.player = {};

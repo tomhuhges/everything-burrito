@@ -92,7 +92,7 @@ setTimeoutAdapter( 5, alert("hello 5 seconds later!") );
 
 ### namespacing
 
-for this exercise we split the functionality of the main file into an MVC structure, with a main PlayerJS object, and separate folders and files reflecting separate methods and properties of the PlayerJS object. The directory structure looked like this:
+for this exercise we split the functionality of the main file into a kind of MVC structure, with a main PlayerJS object, and separate folders and files reflecting separate methods and properties of the PlayerJS object. The directory structure looked like this:
 
 ```
 js/
@@ -111,4 +111,12 @@ js/
 └─ index.js
 └─ app.js
 ```
+
+the `index.js` in each folder just set up an empty object for each namespace.
+
+### AMD/Require.js
+
+we replaced all namespaces with require.js modules. require.js seems very easy and clean but i'm aware it's been/being eclipsed by webpack so i had a brief look at the docs but didn't delve too much further.
+
+### observer/pubsub pattern
 

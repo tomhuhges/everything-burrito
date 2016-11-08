@@ -1,19 +1,19 @@
-PlayerJS.queue.collection = (function() {
+define([], function() {
 
 	var tracks = [{
 		id: 1,
 		title: 'Dave - Wanna Know',
-		duration: 246
+		duration: 20
 	}, {
 		id: 2,
 		title: 'Yung Lean - AF1s',
-		duration: 272
+		duration: 20
 	}, {
 		id: 3,
 		title: '21 Savage - No Heart',
-		duration: 142
+		duration: 10
 	}];
 
 	return tracks;
 
-})();
+});

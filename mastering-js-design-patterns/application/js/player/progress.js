@@ -1,4 +1,4 @@
-PlayerJS.player.progress = (function(){
+define([], function(){
 	
 	var playerProgressElement = document.getElementById('player-progress'),
 	playerProgress = 0;
@@ -17,4 +17,4 @@ PlayerJS.player.progress = (function(){
 		}
 	};
 
-})();
+});

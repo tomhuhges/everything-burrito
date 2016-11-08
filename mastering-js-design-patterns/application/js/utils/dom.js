@@ -1,4 +1,4 @@
-PlayerJS.utils.D$ = (function(){
+define([], function(){
 
 	var elementHandlers = {
 		tr: function(parent){
@@ -49,7 +49,7 @@ PlayerJS.utils.D$ = (function(){
 		}
 	}
 
-	function setTextToElement(element, text) {
+	function setTextToElement( element, text ) {
 		//modern browsers
 		if ( element.textContent !== null ) {
 			element.textContent = text;
@@ -58,7 +58,28 @@ PlayerJS.utils.D$ = (function(){
 		}
 	}
 
-	function addEventListener(element, type, callback) {
+	function addClassName( element, className ) {
+		var classes = element.className.split(" ");
+		if (!~classes.indexOf(className)) {
+			classes.push(className);
+		}
+		element.className = classes.join(" ");
+	}
+
+	function removeClassName( element, className ) {
+		var classes = element.className.split(" ");
+		if (~classes.indexOf(className)) {
+			classes.splice(classes.indexOf(className), 1);
+		}
+		element.className = classes.join(" ");
+	}
+
+	function display( element, state ) {
+		state = state || null;
+		element.style.display = state;
+	}
+
+	function addEventListener( element, type, callback ) {
 		if ( window.addEventListener ) {
 			element.addEventListener(type, callback);
 		} else if ( window.attachEvent ) {
@@ -68,7 +89,7 @@ PlayerJS.utils.D$ = (function(){
 		}
 	}
 
-	function removeEventListener(element, type, callback) {
+	function removeEventListener( element, type, callback ) {
 		if ( window.addEventListener ) {
 			element.removeEventListener(type, callback);
 		} else if ( window.attachEvent ) {
@@ -80,8 +101,12 @@ PlayerJS.utils.D$ = (function(){
 
 	return {
 		create: createElement,
+		text: setTextToElement,
+		display: display,
+		addClass: addClassName,
+		removeClass: removeClassName,
 		on: addEventListener,
 		off: removeEventListener
 	};
 
-}());
+});

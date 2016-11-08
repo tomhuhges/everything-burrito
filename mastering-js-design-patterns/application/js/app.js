@@ -1,10 +1,15 @@
-(function(){
+define([
+	'queue/collectionview',
+	'player/controller',
+	'header/view',
+	'utils/timer'
+	],
+	function(CollectionView, PlayerController, HeaderView, Timer){
 
-	PlayerJS.queue.view.render();
-	PlayerJS.player.controller.play();
+		CollectionView.render();
+		PlayerController.play();
 
-	PlayerJS.utils.Timer.setTimeout(2, function(){
-		PlayerJS.player.controller.pause();
+		Timer.setTimeout(2, function(){
+			PlayerController.pause();
+		});
 	});
-
-})();
