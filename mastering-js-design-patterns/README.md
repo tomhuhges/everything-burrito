@@ -1,5 +1,7 @@
 ## things i learned on this course
 
+----
+
 ### clearInterval()
 
 when using `setInterval` for regularly repeating a function, you can call clearInterval at some point inside of the callback to stop it from running.
@@ -15,6 +17,8 @@ var recurringAction = setInterval(function(){
 	}
 });
 ```
+
+----
 
 ### getters and setters
 
@@ -48,6 +52,8 @@ module.fullName = "Jim Bloggs";
 console.log(module.fullName); // "Jim Bloggs"
 ```
 
+----
+
 ### facade pattern
 
 facades abstract complicated code into a single function with a simple interface, for example a function that allows users to pass in an element, event, and callback to add an event listener. inside, the function checks to see which method is available depending on the browser version and calls the relevant one. the user doesn't have to update three separate function calls when maintaining the code. facades are typically created when dealing with multiple apis to do one job.
@@ -67,6 +73,8 @@ function addEvent(element, type, callback) {
 
 addEvent(myelement, "click", alert("myelement was clicked!")); // calls the relevant function under the hood
 ```
+
+----
 
 ### adapter pattern
 
@@ -89,6 +97,8 @@ function setTimeoutAdapter( seconds, callback ) {
 
 setTimeoutAdapter( 5, alert("hello 5 seconds later!") );
 ```
+
+----
 
 ### namespacing
 
@@ -114,9 +124,13 @@ js/
 
 the `index.js` in each folder just set up an empty object for each namespace.
 
+----
+
 ### AMD/Require.js
 
 we replaced all namespaces with require.js modules. require.js seems very easy and clean but i'm aware it's been/being eclipsed by webpack so i had a brief look at the docs but didn't delve too much further.
+
+----
 
 ### observer/pubsub pattern
 
