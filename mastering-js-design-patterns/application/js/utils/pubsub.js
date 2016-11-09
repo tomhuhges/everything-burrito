@@ -2,14 +2,7 @@ define([], function(){
 
 	var observers = {};
 
-	observers = {
-		'topic': {
-			callback: function(){
-				//hjkhjklhj;
-			},
-		'context': "whatever"
-		}
-	};
+	observers = {};
 
 	function ensureTopicExists( topic ) {
 		if ( !observers.hasOwnProperty(topic) ) {

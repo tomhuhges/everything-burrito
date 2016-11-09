@@ -122,7 +122,7 @@ js/
    └─ index.js
    └─ collection.js
    └─ collectionview.js
-└─ utils				// event handlers and helper functions
+└─ utils/				// event handlers and helper functions
    └─ index.js
    └─ dom.js
    └─ timer.js
