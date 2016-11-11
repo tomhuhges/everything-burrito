@@ -1,7 +1,11 @@
-import log from 'es6!./log';
+import log, {timeLog} from 'es6!./log';
 
-var now = Date(now);
+export var now = Date(now);
 
 export function logTime() {
 	log(now);
+}
+
+export function logDate() {
+	timeLog('monday');
 }

@@ -15,6 +15,8 @@ define([
 	function(CollectionView, PlayerController, HeaderView, Timer, Time){
 
 		Time.logTime();
+		console.log(Time.now);
+		Time.logDate();
 		CollectionView.render();
 		PlayerController.play();
 
