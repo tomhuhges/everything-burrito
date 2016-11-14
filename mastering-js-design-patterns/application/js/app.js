@@ -6,21 +6,17 @@ require.config({
 });
 
 define([
-	'queue/collectionview',
+	'queue/controller',
 	'player/controller',
 	'header/view',
 	'utils/timer',
-	'es6!./utils/time'
+	'utils/pubsub'
 	],
-	function(CollectionView, PlayerController, HeaderView, Timer, Time){
+	function( QueueController, PlayerController, HeaderView, Timer, PubSub ){
 
-		Time.logTime();
-		console.log(Time.now);
-		Time.logDate();
-		CollectionView.render();
-		PlayerController.play();
+		var queueController = new QueueController({autoplay: true, autoload: true, autorender: true});
 
-		Timer.setTimeout(2, function(){
-			PlayerController.pause();
+		Timer.setTimeout(3, function(){
+			PubSub.trigger("request:player:pause");
 		});
 	});

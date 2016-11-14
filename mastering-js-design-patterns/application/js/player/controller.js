@@ -1,10 +1,9 @@
 define([
-	'queue/collection',
 	'player/progress',
 	'utils/dom',
 	'utils/timer',
 	'utils/pubsub'
-	], function(tracks, PlayerProgressBar, D$, Timer, PubSub) {
+	], function(PlayerProgressBar, D$, Timer, PubSub) {
 	
 	var playerTitle = document.getElementById("player-title"),
 		playerButtonPlay = document.getElementById('player-button-play'),
@@ -54,13 +53,7 @@ define([
 	}
 
 	function playNextTrack() {
-		for ( var i=0; i<tracks.length; i++ ) {
-			if ( tracks[i] === playerState.track ) {
-				if ( i < tracks.length -1) {
-					playTrack(tracks[i+1]);
-				}
-			}
-		}
+		PubSub.trigger("request:queue:next");
 	}
 
 	function pauseTrack() {
@@ -78,17 +71,20 @@ define([
 		if (playerState.isPlaying) {
 			pauseTrack();
 		} else {
-			playTrack(playerState.track || tracks[0]);
+			if ( playerState.track != null ) {
+				playTrack(playerState.track);
+			} else {
+				PubSub.trigger("request:queue:next");
+			}
 		}
 	});
 
-	return {
-		play: function(){
-			playTrack(playerState.track || tracks[0]);
-		},
-		pause: function(){
-			pauseTrack();
-		}
-	};
+	PubSub.on("request:player:play", function(trackData){
+		playTrack(trackData);
+	});
+
+	PubSub.on("request:player:pause", function(){
+		pauseTrack();
+	});
 
 });

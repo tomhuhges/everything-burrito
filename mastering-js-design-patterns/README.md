@@ -140,5 +140,39 @@ we replaced all namespaces with require.js modules. require.js seems very easy a
 
 ----
 
-### observer/pubsub pattern
+### pubsub pattern
 
+the pubsub pattern is a way to decouple modules through a module which acts as a middleman between the others. rather than having a module call lots of other module methods when a particular event occurs, it can simply call the pubsub module's 'trigger/emit' method. the pubsub module keeps a list of callbacks for each event, and fires them when the trigger is called. the pubsub module has 2 other methods, 'on' and 'off', which allow modules to subscribe or unsubscribe from events.
+
+##### usage
+
+```js
+// simple pubsub module
+
+var events = {}
+
+var on = function( event, callback ) {
+	if ( events.hasOwnProperty( event ) {
+		events[event].push({callback: callback});
+	} else {
+		events[event] = [{callback: callback}];
+	}
+}
+
+var off = function( event, callback ) {
+	for ( var i=events.length -1; i>=0; i-- ) {
+		if ( events[event][i].callback === callback ) {
+			events[event].splice(i,1);
+		}
+	}
+}
+
+var emit = function( event ) {
+	if ( events.hasOwnProperty( event ) ) {
+		for ( var i=0; i<events[event].length; i++ ) {
+			events[event][i].callback();
+		}
+	} 
+}
+
+```

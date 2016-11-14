@@ -11,29 +11,31 @@ define([
 		};
 
 		function QueueController(options) {
+
 			options = options || {};
+			
 			for ( var key in defaultOptions ) {
 				if ( defaultOptions.hasOwnProperty(key) && !options.hasOwnProperty(key)) {
 					options[key] = defaultOptions[key];
 				}
 			}
-		}
 
-		this.currentIndex = -1;
+			this.currentIndex = -1;
 
-		this.initHooks();
+			this.initHooks();
 
-		if (options.autoload) {
-			this.loadData();
-		}
+			if (options.autoload) {
+				this.loadData();
+			}
 
-		if (options.autorender) {
-			this.render();
-		}
+			if (options.autorender) {
+				this.render();
+			}
 
-		if (options.autoplay) {
-			if (this.collection && this.collection.length) {
-				PubSub.trigger('request:player:play', this.collection[0])
+			if (options.autoplay) {
+				if (this.collection && this.collection.length) {
+					PubSub.trigger('request:player:play', this.collection[0]);
+				}
 			}
 		}
 

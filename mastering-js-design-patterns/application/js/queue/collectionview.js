@@ -2,11 +2,11 @@ define([
 	'utils/dom'
 	],
 	
-	function(tracks, D$){
+	function(D$){
 
 		var tracksContainer = document.getElementById("tracks");
 
-		function render(){
+		function render(tracks){
 
 			var i, row, col1, col2, col3, col4, button1icon, button1, button2icon, button2;
 

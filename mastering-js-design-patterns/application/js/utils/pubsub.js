@@ -12,7 +12,7 @@ define([], function(){
 		on: function( topic, callback, self ) {
 			self = self || null;
 			ensureTopicExists(topic);
-			observers[topic].push({callback: callback, this: self});
+			observers[topic].push({callback: callback, self: self});
 		},
 		off: function( topic, callback ) {
 			ensureTopicExists(topic);
@@ -25,7 +25,7 @@ define([], function(){
 		trigger: function( topic ) {
 			if ( observers.hasOwnProperty(topic)) {
 				for ( var i=0; i < observers[topic].length; i++ ) {
-					observers[topic][i].callback.apply(observers[topic][i].this, Array.prototype.slice.call(arguments, 1));
+					observers[topic][i].callback.apply(observers[topic][i].self, Array.prototype.slice.call(arguments, 1));
 				}
 			}
 		}
