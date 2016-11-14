@@ -1,5 +1,4 @@
 define([
-	'queue/collection',
 	'utils/dom'
 	],
 	
