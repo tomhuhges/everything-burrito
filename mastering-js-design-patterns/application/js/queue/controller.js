@@ -34,7 +34,7 @@ define([
 
 			if (options.autoplay) {
 				if (this.collection && this.collection.length) {
-					PubSub.trigger('request:player:play', this.collection[0]);
+					PubSub.trigger('request:player:play', this.collection[0].model.toJSON());
 				}
 			}
 		}
@@ -42,7 +42,7 @@ define([
 		QueueController.prototype.initHooks = function() {
 			PubSub.on('player:play', function(track){
 				for ( var i=0;i<this.collection.length;i++) {
-					if ( this.collection[i].id === track.id ) {
+					if ( this.collection[i].model.get('id') === track.id ) {
 						this.currentIndex = i;
 						break;
 					}
@@ -51,7 +51,7 @@ define([
 
 			PubSub.on('request:queue:next', function() {
 				if ( this.collection.length > this.currentIndex + 1 ) {
-					PubSub.trigger('request:player:play', this.collection[this.currentIndex + 1]);
+					PubSub.trigger('request:player:play', this.collection[this.currentIndex + 1].model.toJSON());
 				}
 			}, this);
 		}
@@ -61,7 +61,10 @@ define([
 		}
 
 		QueueController.prototype.render = function() {
-			TracksView.render(this.collection);
+			if ( this.view == null ) {
+				this.view = new TracksView(this.collection);
+			}
+			this.view.render();
 		}
 
 		return QueueController;

@@ -6,7 +6,7 @@
 - [adapter pattern](#adapter-pattern)
 - [namespacing](#namespacing)
 - [amd/require.js](#amdrequirejs)
-- [observer/pubsub pattern](#observerpubsub-pattern)
+- [pubsub pattern](#pubsub-pattern)
 
 ----
 
@@ -160,7 +160,7 @@ var on = function( event, callback ) {
 }
 
 var off = function( event, callback ) {
-	for ( var i=events.length -1; i>=0; i-- ) {
+	for ( var i=events.length-1; i >= 0; i-- ) {
 		if ( events[event][i].callback === callback ) {
 			events[event].splice(i,1);
 		}
@@ -169,10 +169,33 @@ var off = function( event, callback ) {
 
 var emit = function( event ) {
 	if ( events.hasOwnProperty( event ) ) {
-		for ( var i=0; i<events[event].length; i++ ) {
+		for ( var i=0; i < events[event].length; i++ ) {
 			events[event][i].callback();
 		}
 	} 
 }
 
 ```
+
+### prototypal inheritance
+
+we added the pubsub pattern to the tracks and split them into individual components using a mix of constructor functions and `Object.create`. towards the end of this section, my app had a few errors when it shouldn't have. i went through each error in the console by checking the line numbers and files and finally got to a point where there were no errors. however, the tracks in the queue were duplicated. instead of reading 1,2,3 it read 3,3,3. i used the debugger to step through the track view creation and saw that each track constructor was being passed the correct data, and that was creating the correct instance in the model, but when it came to render the list, the data in the model was changed.
+
+eventually i realised by checking the track prototype that every time the model was getting updated, the track prototype was being overwritten. looking at my code i had this in my `model.js`:
+
+```js
+return function( data ) {
+	return Object.create(TrackModel.init(data));
+}
+```
+
+the `init` function adds the data to an attributes property for `this`, so each time it was overwriting the track prototype's attribute property and then creating a new object with TrackModel as the prototype. this is useless because then each track object is empty, and it looks to the prototype to get the attributes, which by that point have been overwritten by the last track. to fix, i needed to be adding the data to the created object like this:
+
+```js
+return function( data ) {
+	return Object.create(TrackModel).init(data);
+}
+```
+
+so it was just an annoying misplaced parenthesis, but it taught me how prototypes can sometimes hide errors if they can find what they want up the prototype chain, rather than where it should be.
+
