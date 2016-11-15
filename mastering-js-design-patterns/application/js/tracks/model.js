@@ -1,12 +1,15 @@
 define([
-	'utils/util'
+	'utils/util',
+	'utils/pubsub_mixin'
 	],
 
-	function( Utils ) {
+	function( Utils, PubSubMixin ) {
 
-		var TrackModel = {};
+		var TrackModel = Object.create(PubSubMixin);
+		console.log(TrackModel);
 
 		TrackModel.init = function( data ){
+			PubSubMixin.init.call(this);
 			this.attributes = data || {};
 			return this;
 		}

@@ -8,6 +8,7 @@
 - [amd/require.js](#amdrequirejs)
 - [pubsub pattern](#pubsub-pattern)
 - [prototypal inheritance](#prototypal-inheritance)
+- [mixins pattern](#mixins-pattern)
 
 ----
 
@@ -199,4 +200,32 @@ return function( data ) {
 ```
 
 so it was just an annoying misplaced parenthesis, but it taught me how prototypes can sometimes hide errors if they can find what they want up the prototype chain, rather than where it should be.
+
+### mixin pattern
+
+a mixin is a class containing useful, reusable methods that can be added to other objects. the methods usually provide general-use functionality that can be applicable for multiple things, and added to multiple modules.
+
+it can used as `Object.create(Mixin)`, with Mixin acting as a prototype, or with an extend function (like underscore's `_.extend`) that adds methods from the mixin directly to an existing prototype if the object is created from a constructor (unsure if this is good practice?)
+
+
+##### usage
+```js
+var Mixin = {
+	sayHello: function(){
+		console.log('hello');
+	}
+}
+
+// Object.create()
+var newObj = Object.create(Mixin);
+newObj.sayHello() // 'hello'
+
+// constructor
+var Obj = function() {...}
+_.extend( Obj.prototype, Mixin );
+var newObj2 = new Obj();
+newObj2.sayHello() // 'hello'
+```
+
+
 
