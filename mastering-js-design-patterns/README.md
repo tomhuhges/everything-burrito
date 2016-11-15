@@ -205,7 +205,7 @@ so it was just an annoying misplaced parenthesis, but it taught me how prototype
 
 a mixin is a class containing useful, reusable methods that can be added to other objects. the methods usually provide general-use functionality that can be applicable for multiple things, and added to multiple modules.
 
-it can used as `Object.create(Mixin)`, with Mixin acting as a prototype, or with an extend function (like underscore's `_.extend`) that adds methods from the mixin directly to an existing prototype if the object is created from a constructor (unsure if this is good practice?)
+it can used as `Object.create(Mixin)`, with Mixin acting as a prototype, or with an extend function (like underscore's `_.extend`) that adds methods from the mixin directly to an existing prototype if the object is created from a constructor (this seems like bad practice, as it directly mutates the existing protype, but seems to be used by big frameworks/libraries?) backbone + ember both have mixins for adding pubsub functionality to multiple objects.
 
 
 ##### usage

@@ -6,7 +6,6 @@ define([
 	function( Utils, PubSubMixin ) {
 
 		var TrackModel = Object.create(PubSubMixin);
-		console.log(TrackModel);
 
 		TrackModel.init = function( data ){
 			PubSubMixin.init.call(this);
