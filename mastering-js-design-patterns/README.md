@@ -7,6 +7,7 @@
 - [namespacing](#namespacing)
 - [amd/require.js](#amdrequirejs)
 - [pubsub pattern](#pubsub-pattern)
+- [prototypal inheritance](#prototypal-inheritance)
 
 ----
 
