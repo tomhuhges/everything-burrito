@@ -29,6 +29,13 @@ define([
 			}
 		}
 
+		TrackModel.set = function (attr, value) {
+			if (!this.has(attr) || this.get(attr) !== value) {
+				this.attributes[attr] = value;
+				this.trigger('change', attr, value, this);
+			}
+		}
+
 		return function( data ) {
 			return Object.create(TrackModel).init(data);
 		}

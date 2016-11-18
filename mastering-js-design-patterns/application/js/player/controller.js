@@ -23,11 +23,13 @@ define([
 
 	function playTrack(track){
 		// if track is already playing, do nothing
-		if ( track === playerState.track && playerState.isPlaying === true ) {
+		if ( playerState.track && track.id === playerState.track.id && playerState.isPlaying === true ) {
 			return false;
 		}
 
-		if ( track !== playerState.track ) {
+		if ( !playerState.track || track.id !== playerState.track.id ) {
+			clearInterval(playerState.interval);
+			playerState.progress = 0;
 			playerState.track = track;
 			playerTitle.innerHTML = track.title;
 			PlayerProgressBar.progress = 0;

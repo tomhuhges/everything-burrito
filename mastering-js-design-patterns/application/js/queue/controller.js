@@ -49,6 +49,14 @@ define([
 				}
 			}, this);
 
+			PubSub.on('request:queue:play', function(track){
+				for ( var i=0; i<this.collection.length;i++) {
+					if (this.collection[i].model.get('id') === track.id ) {
+						PubSub.trigger("request:player:play", this.collection[i].model.toJSON());
+					}
+				}
+			}, this);
+
 			PubSub.on('request:queue:next', function() {
 				if ( this.collection.length > this.currentIndex + 1 ) {
 					PubSub.trigger('request:player:play', this.collection[this.currentIndex + 1].model.toJSON());

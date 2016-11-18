@@ -2,21 +2,21 @@ define([], function(){
 
 	var elementHandlers = {
 		tr: function(parent){
-			if ( parent !== null ) return parent.insertRow();
+			if ( parent != null ) return parent.insertRow();
 			else return this['*'](parent, 'tr');
 		},
 		td: function(parent){
-			if ( parent !== null ) return parent.insertCell();
+			if ( parent != null ) return parent.insertCell();
 			else return this['*'](parent, 'td');
 		},
 		text: function(parent){
 			var textNode = document.createTextNode("This is some dummy text");
-			if ( parent !== null ) return parent.appendChild(textNode);
+			if ( parent != null ) return parent.appendChild(textNode);
 			return textNode;
 		},
 		"*": function(parent, elementName) {
 			var element = document.createElement(elementName);
-			if ( parent !== null ) parent.appendChild(element);
+			if ( parent != null ) parent.appendChild(element);
 			return element;
 		}
 	};
@@ -41,17 +41,19 @@ define([], function(){
 	function decorateElement(element, options) {
 		options = options || {};
 
-		if ( options.text !== null ) {
+		if ( options.text != null ) {
 			setTextToElement(element, options.text);
 		}
-		if ( options.className !== null ) {
+		if ( options.className != null ) {
 			element.className = options.className;
 		}
 	}
 
 	function setTextToElement( element, text ) {
 		//modern browsers
-		if ( element.textContent !== null ) {
+		if ( element.nodeName === "INPUT" ) {
+			element.value = text;
+		} else if ( element.textContent != null ) {
 			element.textContent = text;
 		} else {
 			element.innerHTML = text;
