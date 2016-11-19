@@ -234,3 +234,5 @@ newObj2.sayHello() // 'hello'
 **mvvm** - the view doesn't have any functional code at all, it just displays data. the viewmodel instead handles all events, updating both the model and the view.
 
 
+
+
