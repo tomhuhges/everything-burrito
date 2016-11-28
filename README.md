@@ -47,15 +47,14 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ### 1. the basics
 
 ```
-NB. i consider the basics to be the following:
-	- values (booleans, numbers, strings)
-	- operators
-	- other values (null, undefined, NaN)
-	- arrays
-	- functions
-	- objects
-	- control flow (if, else if, else)
-	- loops (for, while, do-while)
+- values (booleans, numbers, strings)
+- operators
+- other values (null, undefined, NaN)
+- arrays
+- functions
+- objects
+- control flow (if, else if, else)
+- loops (for, while, do-while)
 ```
 
 - \[mooc\] [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
@@ -67,10 +66,19 @@ NB. i consider the basics to be the following:
 - \[training\] [Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
 
 ### 2. in-built methods & objects
+```
+the most useful/interesting ones:
+- number - isNan, toFixed
+- string - split, join, toLowerCase, toUpperCase, indexOf, search, match, replace
+- array - pop/push/shift/unshift, forEach, map, filter, reduce, sort, concat, every, some (loads!)
+- object - hasOwnProperty, Object.create, Object.assign, Object.keys
+- function - call, apply, bind
+```
 
-- \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code)
-- \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
+- \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
+- \[reference\] [`MDN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
+- \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`)
 
 ### 3. advanced js concepts
 	1. passing by value/reference
