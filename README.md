@@ -5,18 +5,12 @@
 
 this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. 
 
-i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts. i've also treated ES2015 as something that should be used from the start, rather than an additional chapter.
+i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts. i've also treated ES2015 as something that should be used from the start, rather than a separate section.
 
 ### contents
 
 1. the basics
-2. in built methods & objects
-	1. number methods
-	2. string methods
-	3. array methods
-	4. object methods
-	5. function methods
-	4. math, date
+2. in-built methods & objects
 3. advanced js concepts
 	1. passing by value/reference
 	2. recursive functions
@@ -65,20 +59,20 @@ NB. i consider the basics to be the following:
 ```
 
 - \[mooc\] [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
-- \[article\] Babel ES2015 Features
+- \[mooc\] [FreeCodeCamp - Basic JavaScript](https://www.freecodecamp.com/challenges/comment-your-javascript-code)
+- \[reference\] Babel ES2015 Features
 	- [let is the new var, const](https://babeljs.io/docs/learn-es2015/#let-const) 🌯
 	- [template strings](https://babeljs.io/docs/learn-es2015/#template-strings) 🌯
 	- [arrow functions](https://babeljs.io/docs/learn-es2015/#arrows-and-lexical-this) 🌯
 - \[training\] [Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
 
-### 2. in built methods & objects
-	1. number methods
-	2. string methods
-	3. array methods
-	4. object methods
-	5. function methods
-	4. math, date
-3. advanced js concepts
+### 2. in-built methods & objects
+
+- \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code)
+- \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
+- \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
+
+### 3. advanced js concepts
 	1. passing by value/reference
 	2. recursive functions
 	3. callbacks
