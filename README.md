@@ -5,7 +5,7 @@
 
 this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. 
 
-i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts. i've also treated ES6 as something that should be used from the start, rather than an additional chapter.
+i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts. i've also treated ES2015 as something that should be used from the start, rather than an additional chapter.
 
 ### contents
 
@@ -65,7 +65,10 @@ NB. the things i consider to be the basics are the following:
 ```
 
 - [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
-- [Eric Elliot - JavaScript ES6+: var, let, or const?](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75#.xm3rlwdcd) 🌯🌯
+- Babel ES2015 (aka ES6, ES Harmony) Features
+	- [let is the new var, const](https://babeljs.io/docs/learn-es2015/#let-const) 🌯
+	- [template strings](https://babeljs.io/docs/learn-es2015/#template-strings) 🌯
+	- [arrow functions](https://babeljs.io/docs/learn-es2015/#arrows-and-lexical-this) 🌯
 
 ### 2. in built methods & objects
 	1. number methods
