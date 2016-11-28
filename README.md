@@ -59,17 +59,19 @@ this is a syllabus of everything i either used or didnt use to learn front end j
 
 ### 1. the basics
 
-> the things i consider to be the basics are the following:
->	- values (booleans, numbers, strings)
->	- other values (null, undefined, NaN)
->	- operators
->	- arrays
->	- functions
->	- objects
->	- if, else if, else
->	- for
->	- while
->	- do-while
+```
+NB. the things i consider to be the basics are the following:
+	- values (booleans, numbers, strings)
+	- other values (null, undefined, NaN)
+	- operators
+	- arrays
+	- functions
+	- objects
+	- if, else if, else
+	- for
+	- while
+	- do-while
+```
 
 resources
 
