@@ -3,20 +3,13 @@
 
 # learning js
 
-this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts.
+this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. 
+
+i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts. i've also treated ES6 as something that should be used from the start, rather than an additional chapter.
 
 ### contents
 
 1. the basics
-	1. values (booleans, numbers, strings) and operators
-	2. other values (null, undefined, NaN)
-	3. arrays
-	4. functions
-	5. objects
-	1. if, else if, else
-	2. for
-	3. while
-	4. do-while
 2. in built methods & objects
 	1. number methods
 	2. string methods
@@ -67,13 +60,12 @@ NB. the things i consider to be the basics are the following:
 	- arrays
 	- functions
 	- objects
-	- if, else if, else
-	- for
-	- while
-	- do-while
+	- control flow (if, else if, else)
+	- loops (for, while, do-while)
 ```
 
-resources
+- [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
+- [Eric Elliot - JavaScript ES6+: var, let, or const?](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75#.xm3rlwdcd) 🌯🌯
 
 ### 2. in built methods & objects
 	1. number methods
