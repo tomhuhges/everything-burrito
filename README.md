@@ -76,7 +76,7 @@ the most useful/interesting ones:
 ```
 
 - \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
-- \[reference\] [`MDN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
+- \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
 - \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`)
 
