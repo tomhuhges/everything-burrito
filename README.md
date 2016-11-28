@@ -58,26 +58,32 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ```
 
 - \[mooc\] [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
+- \[book\] [Eloquent JS - Chs. 1-4](http://eloquentjavascript.net/01_values.html) 🌯
 - \[mooc\] [FreeCodeCamp - Basic JavaScript](https://www.freecodecamp.com/challenges/comment-your-javascript-code)
 - \[reference\] Babel ES2015 Features
 	- [let is the new var, const](https://babeljs.io/docs/learn-es2015/#let-const) 🌯
 	- [template strings](https://babeljs.io/docs/learn-es2015/#template-strings) 🌯
 	- [arrow functions](https://babeljs.io/docs/learn-es2015/#arrows-and-lexical-this) 🌯
+	- [default, rest, spread](https://babeljs.io/docs/learn-es2015/#default-rest-spread) 🌯🌯
+- \[reference\] [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 - \[training\] [Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
 
 ### 2. in-built methods & objects
 ```
 the most useful/interesting ones:
 - number - isNan, toFixed
-- string - split, join, toLowerCase, toUpperCase, indexOf, search, match, replace
-- array - pop/push/shift/unshift, forEach, map, filter, reduce, sort, concat, every, some (loads!)
+- string - split, join, toLowerCase, toUpperCase, indexOf, search, match, replace, repeat
+- array - pop/push/shift/unshift, forEach, map, filter, reduce, sort, concat, every, some, from (loads!)
 - object - hasOwnProperty, Object.create, Object.assign, Object.keys
-- function - call, apply, bind
+- function - apply, call, bind
+- math + date
 ```
 
+- \[book\] [Eloquent JS - Ch. 5: Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html) 🌯🌯
 - \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
 - \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
+- \[article\] [](https://babeljs.io/docs/learn-es2015/#default-rest-spread)
 - \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`)
 
 ### 3. advanced js concepts
@@ -102,15 +108,47 @@ the most useful/interesting ones:
 7. node.js & npm
 	1. node.js
 	2. npm
-8. common.js & amd
-	1. common.js
-	2. amd
-9. webpack & other tooling
-	1. webpack
-	2. other tooling
-10. design patterns
-11. functional js
-12. react & redux
+
+### 8. common.js & amd
+
+```js
+tldr:
+both are ways to load modules.
+amd (see require.js) is ugly as hell, but asynchronous
+
+	define([moduleToImport], function () {
+	  return somethingToExport
+	});
+
+common.js (used by node.js) is synchronous as hell, but pretty
+
+	require('moduleToImport');
+	module.exports = somethingToExport;
+
+but you should use es2015 modules anyway
+
+	import 'moduleToImport';
+	export somethingToExport;
+```
+	- \[article\] [ES6 Modules: The End of Civilization As We Know It?](https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0#.o7t29ysim) 🌯🌯🌯🌯
+
+### 9. gulp & webpack
+
+```
+i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is a good replacement for gulp. you should definitely learn webpack.
+```
+	1. gulp
+		- \[mooc\] [Udacity - Web Tooling & Automation](https://www.udacity.com/course/web-tooling-automation--ud892) 🌯🌯🌯
+	2. webpack
+		- \[article\] [Beginner's guide to Webpack](https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.rjc0btf32) 🌯🌯🌯
+		- \[article\] [webpack-howto](https://github.com/petehunt/webpack-howto) 🌯🌯🌯🌯
+		- \[book\] [SurviveJS - Become a Webpack Master](http://survivejs.com/webpack/) 🌯🌯🌯🌯
+
+### 10. design patterns
+
+### 11. functional js
+
+### 12. react & redux
 
 
 
