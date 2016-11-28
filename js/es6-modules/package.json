@@ -1,0 +1,17 @@
+{
+  "name": "es6-modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "utility.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "tape": "^4.6.2"
+  }
+}

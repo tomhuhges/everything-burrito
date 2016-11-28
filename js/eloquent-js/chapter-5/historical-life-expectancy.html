@@ -1,0 +1,35 @@
+<script src="ancestry.js"></script>
+
+<script>
+
+
+var groupByCentury = groupBy(ANCESTRY_FILE, getCentury);
+
+console.log("Average age by century: ");
+
+for ( var century in groupByCentury) {
+	groupByCentury[century].forEach(function(person){
+		var age = person.died - person.born;
+		var i = groupByCentury[century].indexOf(person);
+		groupByCentury[century][i] = age;
+	});
+	groupByCentury[century] = groupByCentury[century].reduce(function(a,b){return a + b}) / groupByCentury[century].length;
+	console.log(century + ": " + groupByCentury[century].toFixed(1) + " years");
+}
+
+function groupBy(array, func) {
+	var group = {};
+	array.forEach(function(obj) {
+		var groupName = func(obj);
+		if (group.hasOwnProperty(groupName)) group[groupName].push(obj);
+		else group[groupName] = [obj];
+	});
+	return group;
+}
+
+function getCentury(person){
+	return Math.ceil(person.died / 100);
+}
+
+
+</script>

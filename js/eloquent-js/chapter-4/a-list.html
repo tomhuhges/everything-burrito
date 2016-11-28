@@ -1,0 +1,76 @@
+
+
+<script>
+
+	function arrayToList( array ) {
+
+		var list = null;
+
+		for ( var i=array.length-1; i>=0; i-- )
+
+			list = {
+				value : array[i],
+				rest : list
+			}
+
+	return list;
+
+	}
+
+	var array = [1,2,3];
+
+	console.log( arrayToList(array) );
+
+
+
+
+	function listToArray(list) {
+	  
+	  var array = [];
+	  
+	  for (var rest = list; rest; rest = rest.rest) array.push(rest.value);
+	  
+	  return array;
+	
+	}
+
+	var list = {
+		value: 1,
+		rest: {
+			value: 2,
+			rest: {
+				value: 3,
+				rest: null
+			}
+		}
+	};
+
+	console.log( listToArray(list) );
+
+
+
+	function prepend( element, list ) {
+
+		return {
+			value: element,
+			rest: list
+		}
+
+	}
+
+	console.log( prepend('hello', list) );
+
+
+	function nth( list, number ) {
+
+		if ( !list ) return undefined;
+		if ( number === 0 ) return list.value;
+		else return nth(list.rest, number-1);
+
+	}
+
+	console.log( nth(list, 3) );
+
+	
+
+</script>

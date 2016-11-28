@@ -1,0 +1,57 @@
+
+
+<script>
+
+	function range( start, end, step ) {
+
+		var array = [];
+
+		if ( !step ) step = 1;
+
+		if ( step > 0 ) {
+
+			while ( start <= end ) {
+
+				array.push(start);
+
+				start += step;
+
+			}
+
+		} else {
+
+			while ( start >= end ) {
+
+				array.push(start);
+
+				start += step;
+
+			}
+
+		}		
+
+		return array;
+
+	}
+
+	console.log( range(1,10,2) );
+	console.log( range(5,2,-1) );
+
+	function sum( array ) {
+
+		var i=0, sum=0;
+
+		while ( i<array.length ) {
+
+			sum += array[i];
+			i++;
+
+		}
+
+		return sum;
+
+	}
+
+	console.log( sum(range(1,10)) );
+
+</script>

@@ -1,0 +1,35 @@
+<script>
+
+function every(array, func){
+
+	var i = 0, result = true;
+
+	while ( i < array.length && result === true ) {
+		result = func(array[i]);
+		i++;
+	}
+
+	return result;
+}
+
+console.log(every([1,2,3,4,5,6,7,8,9], function(a){return a < 10 ? true : false;})); // returns true
+console.log(every([1,2,3,4,10,6,7,8,9], function(a){return a < 10 ? true : false;})); // returns false
+
+function some(array, func){
+
+	var i = 0, result = false;
+
+	while ( i < array.length && result === false ) {
+		result = func(array[i]);
+		i++;
+	}
+
+	return result;
+}
+
+console.log(some([10,20,30,40,50,6,70,80,90], function(a){return a < 10 ? true : false;})); // returns true
+console.log(some([10,20,30,40,50,60,70,80,90], function(a){return a < 10 ? true : false;})); // returns false
+
+
+
+</script>

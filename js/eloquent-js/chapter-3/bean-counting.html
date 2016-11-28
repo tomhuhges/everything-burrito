@@ -1,0 +1,35 @@
+
+
+<script>
+
+	/*function countBs(str) {
+
+		var bs = 0;
+
+		for (var i=0; i<str.length;i++) if ( str[i] === 'B' ) bs++;
+
+		return bs;
+
+	}
+
+	console.log( countBs("Hello Bob, don't Bother me againB!!!") ); */
+
+	function countChar(str, char) {
+
+		var bs = 0;
+
+		for (var i=0; i<str.length;i++) if ( str[i] === char ) bs++;
+
+		return bs;
+
+	}
+
+	function countBs(str) {
+
+		return countChar(str, "B");
+
+	}
+
+	console.log( countBs("Hello Bob, don't Bother me againB!!!") );
+
+</script>

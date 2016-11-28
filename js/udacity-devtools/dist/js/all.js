@@ -1,0 +1,1 @@
+"use strict";var hello="hello";alert(hello);

@@ -1,0 +1,16 @@
+{
+  "name": "mastering-js-design-patterns",
+  "version": "1.0.0",
+  "description": "js design patterns",
+  "contributors": [
+    "tomhuhges"
+  ],
+  "license": "Apache",
+  "dependencies": {
+    "requirejs-babel": "0.0.9"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  }
+}
