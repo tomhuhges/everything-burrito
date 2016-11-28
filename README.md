@@ -55,8 +55,8 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ```
 NB. i consider the basics to be the following:
 	- values (booleans, numbers, strings)
-	- other values (null, undefined, NaN)
 	- operators
+	- other values (null, undefined, NaN)
 	- arrays
 	- functions
 	- objects
@@ -65,11 +65,11 @@ NB. i consider the basics to be the following:
 ```
 
 - \[mooc\] [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
-- \[article\]Babel ES2015 Features
+- \[article\] Babel ES2015 Features
 	- [let is the new var, const](https://babeljs.io/docs/learn-es2015/#let-const) 🌯
 	- [template strings](https://babeljs.io/docs/learn-es2015/#template-strings) 🌯
 	- [arrow functions](https://babeljs.io/docs/learn-es2015/#arrows-and-lexical-this) 🌯
-- \[training\][Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
+- \[training\] [Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
 
 ### 2. in built methods & objects
 	1. number methods
