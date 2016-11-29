@@ -1,8 +1,6 @@
 <a href="https://www.youtube.com/watch?v=xDButnEa320">![everything burrito](/everything-burrito.png)</a>
 *what it feels like to learn js*
 
-| *what it feels like to learn js* |
-
 # learning js
 
 this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. 
@@ -38,11 +36,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	1. node.js
 	2. npm
 8. common.js & amd
-	1. common.js
-	2. amd
-9. webpack & other tooling
-	1. webpack
-	2. other tooling
+9. gulp & webpack
 10. design patterns
 11. functional js
 12. react & redux
@@ -93,7 +87,7 @@ the most useful/interesting ones:
 - \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
 - \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
-- \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`)
+- \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`, see ch 3)
 
 ----
 
@@ -190,6 +184,10 @@ webpack
 
 ### 12. react & redux
 
+- \[mooc\] [Codeacademy - Learn ReactJS: Part I](https://www.codecademy.com/learn/react-101) 🌯🌯🌯
+- \[book\] [SurviveJS - Become a React Master](http://survivejs.com/react/) 🌯🌯🌯🌯🌯
+- \[mooc\] [React Fundamentals](https://egghead.io/courses/react-fundamentals) 🌯🌯🌯🌯🌯
+- \[mooc\] [Codeacademy - Learn ReactJS: Part II](https://www.codecademy.com/learn/react-102) 🌯🌯🌯🌯🌯
 
 
 
