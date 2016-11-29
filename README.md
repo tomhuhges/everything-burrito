@@ -130,8 +130,9 @@ but you should use es2015 modules anyway
 	import {module} from 'moduleToImport';
 	export somethingToExport;
 ```
-	- \[article\] [ES6 Modules: The End of Civilization As We Know It?](https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0#.o7t29ysim) 🌯🌯🌯🌯
-	- \[article\] [](https://addyosmani.com/writing-modular-js/) 🌯🌯🌯🌯
+
+- \[article\] [ES6 Modules: The End of Civilization As We Know It?](https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0#.o7t29ysim) 🌯🌯🌯🌯
+- \[article\] [](https://addyosmani.com/writing-modular-js/) 🌯🌯🌯🌯
 
 ### 9. gulp & webpack
 
