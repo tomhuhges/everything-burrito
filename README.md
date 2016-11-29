@@ -45,18 +45,22 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 11. functional js
 12. react & redux
 
+----
 
 ### 1. the basics
 
 ```
-- values (booleans, numbers, strings)
-- operators
-- other values (null, undefined, NaN)
-- arrays
-- functions
-- objects
-- control flow (if, else if, else)
-- loops (for, while, do-while)
+/*
+	the different data types, how they're written, and how they work.
+	- values (booleans, numbers, strings)
+	- operators
+	- other values (null, undefined, NaN)
+	- arrays
+	- functions
+	- objects
+	- control flow (if, else if, else)
+	- loops (for, while, do-while)
+*/
 ```
 
 - \[mooc\] [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
@@ -69,6 +73,8 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	- [default, rest, spread](https://babeljs.io/docs/learn-es2015/#default-rest-spread) 🌯🌯
 - \[reference\] [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) 🌯
 - \[training\] [Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
+
+----
 
 ### 2. in-built methods & objects
 ```
@@ -87,6 +93,8 @@ the most useful/interesting ones:
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
 - \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`)
 
+----
+
 ### 3. advanced js concepts
 	1. passing by value/reference
 	2. recursive functions
@@ -96,19 +104,33 @@ the most useful/interesting ones:
 	5. prototypes
 	6. closures
 	8. namespacing & modules
-4. bom, dom & events (aka makin' websites)
+
+----
+
+### 4. bom, dom & events (aka makin' websites)
 	1. bom
 	2. dom
 	3. events
-5. object oriented js + mvc
+
+----
+
+### 5. object oriented js + mvc
 	1. mvc
 	2. oojs
-6. tdd
+
+----
+
+### 6. tdd
 	1. vanilla testing
 	2. mocha
-7. node.js & npm
+
+----
+
+### 7. node.js & npm
 	1. node.js
 	2. npm
+
+----
 
 ### 8. commonjs & amd
 
@@ -135,6 +157,8 @@ but you should use es2015 modules anyway
 - \[article\] [ES6 Modules: The End of Civilization As We Know It?](https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0#.o7t29ysim) 🌯🌯🌯🌯
 - \[article\] [Addy Osmani - Writing Modular JS](https://addyosmani.com/writing-modular-js/) 🌯🌯🌯🌯
 
+----
+
 ### 9. gulp & webpack
 
 ```
@@ -152,9 +176,15 @@ webpack
 - \[article\] [webpack-howto](https://github.com/petehunt/webpack-howto) 🌯🌯🌯🌯
 - \[book\] [SurviveJS - Become a Webpack Master](http://survivejs.com/webpack/) 🌯🌯🌯🌯
 
+----
+
 ### 10. design patterns
 
+----
+
 ### 11. functional js
+
+----
 
 ### 12. react & redux
 
