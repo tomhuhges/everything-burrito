@@ -75,13 +75,13 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ### 2. in-built methods & objects
 ```
-the most useful/interesting ones:
-- number - isNan, toFixed
-- string - split, join, toLowerCase, toUpperCase, indexOf, search, match, replace, repeat
-- array - pop/push/shift/unshift, forEach, map, filter, reduce, sort, concat, every, some, from (loads!)
-- object - hasOwnProperty, Object.create, Object.assign, Object.keys
-- function - apply, call, bind
-- math + date
+// the most useful/interesting ones:
+// - number - isNan, toFixed
+// - string - split, join, toLowerCase, toUpperCase, indexOf, search, match, replace, repeat
+// - array - pop/push/shift/unshift, forEach, map, filter, reduce, sort, concat, every, some, from (loads!)
+// - object - hasOwnProperty, Object.create, Object.assign, Object.keys
+// - function - apply, call, bind
+// - math + date
 ```
 
 - \[book\] [Eloquent JS - Ch. 5: Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html) 🌯🌯
@@ -157,20 +157,20 @@ npm, modules and web tooling a bit better
 ### 8. commonjs & amd
 
 ```js
-tldr:
-both are ways to load modules.
-amd (see require.js) is ugly as hell, but asynchronous
+// tldr: both are ways to load modules.
+
+// amd (see require.js) is ugly as hell, but asynchronous
 
 	define([moduleToImport], function () {
 	  return somethingToExport
 	});
 
-commonjs (used by node.js) is synchronous as hell, but pretty
+// commonjs (used by node.js) is synchronous as hell, but pretty
 
 	require('./moduleToImport');
 	exports.thing = somethingToExport;
 
-but you should use es2015 modules anyway
+// but you should use es2015 modules anyway
 
 	import {module} from 'moduleToImport';
 	export somethingToExport;
@@ -184,8 +184,8 @@ but you should use es2015 modules anyway
 ### 9. gulp & webpack
 
 ```
-i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is
-a great replacement for gulp. you should definitely learn webpack.
+// i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is
+// a great replacement for gulp. you should definitely learn webpack.
 ```
 
 gulp 
