@@ -1,4 +1,4 @@
-![contents of the everything burrito](/everything-burrito.png)
+![<img src="/everything-burrito.png">](https://www.youtube.com/watch?v=xDButnEa320)
 *what it feels like to learn js*
 
 # learning js
@@ -6,6 +6,8 @@
 this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. 
 
 i've rated everything from 1-5 burritos (🌯) depending on the skill level required to understand the concepts. i've also treated ES2015 as something that should be used from the start, rather than a separate section.
+
+----
 
 ### contents
 
@@ -65,7 +67,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	- [template strings](https://babeljs.io/docs/learn-es2015/#template-strings) 🌯
 	- [arrow functions](https://babeljs.io/docs/learn-es2015/#arrows-and-lexical-this) 🌯
 	- [default, rest, spread](https://babeljs.io/docs/learn-es2015/#default-rest-spread) 🌯🌯
-- \[reference\] [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+- \[reference\] [conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) 🌯
 - \[training\] [Codewars (8kyu & 7kyu)](https://www.codewars.com/) 🌯
 
 ### 2. in-built methods & objects
@@ -83,7 +85,6 @@ the most useful/interesting ones:
 - \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
 - \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
-- \[article\] [](https://babeljs.io/docs/learn-es2015/#default-rest-spread)
 - \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`)
 
 ### 3. advanced js concepts
