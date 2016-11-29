@@ -139,12 +139,13 @@ but you should use es2015 modules anyway
 ```
 i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is a good replacement for gulp. you should definitely learn webpack.
 ```
-	1. gulp
-		- \[mooc\] [Udacity - Web Tooling & Automation](https://www.udacity.com/course/web-tooling-automation--ud892) 🌯🌯🌯
-	2. webpack
-		- \[article\] [Beginner's guide to Webpack](https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.rjc0btf32) 🌯🌯🌯
-		- \[article\] [webpack-howto](https://github.com/petehunt/webpack-howto) 🌯🌯🌯🌯
-		- \[book\] [SurviveJS - Become a Webpack Master](http://survivejs.com/webpack/) 🌯🌯🌯🌯
+
+gulp
+	- \[mooc\] [Udacity - Web Tooling & Automation](https://www.udacity.com/course/web-tooling-automation--ud892) 🌯🌯🌯
+webpack
+	- \[article\] [Beginner's guide to Webpack](https://medium.com/@dabit3/beginner-s-guide-to-webpack-b1f1a3638460#.rjc0btf32) 🌯🌯🌯
+	- \[article\] [webpack-howto](https://github.com/petehunt/webpack-howto) 🌯🌯🌯🌯
+	- \[book\] [SurviveJS - Become a Webpack Master](http://survivejs.com/webpack/) 🌯🌯🌯🌯
 
 ### 10. design patterns
 
