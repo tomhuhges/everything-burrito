@@ -109,7 +109,7 @@ the most useful/interesting ones:
 	1. node.js
 	2. npm
 
-### 8. common.js & amd
+### 8. commonjs & amd
 
 ```js
 tldr:
@@ -120,17 +120,18 @@ amd (see require.js) is ugly as hell, but asynchronous
 	  return somethingToExport
 	});
 
-common.js (used by node.js) is synchronous as hell, but pretty
+commonjs (used by node.js) is synchronous as hell, but pretty
 
-	require('moduleToImport');
-	module.exports = somethingToExport;
+	require('./moduleToImport');
+	exports.thing = somethingToExport;
 
 but you should use es2015 modules anyway
 
-	import 'moduleToImport';
+	import {module} from 'moduleToImport';
 	export somethingToExport;
 ```
 	- \[article\] [ES6 Modules: The End of Civilization As We Know It?](https://medium.com/@brianleroux/es6-modules-amd-and-commonjs-c1acefbe6fc0#.o7t29ysim) 🌯🌯🌯🌯
+	- \[article\] [](https://addyosmani.com/writing-modular-js/) 🌯🌯🌯🌯
 
 ### 9. gulp & webpack
 
