@@ -90,9 +90,13 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ### 3. intermediate js concepts
 
 1. passing by value/reference
+
 2. recursive functions
+
 3. callbacks
-7. the event loop
+
+4. the event loop
+	- \[video\] [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) 🌯🌯🌯
 
 ----
 
@@ -107,7 +111,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	- \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯 (has a good bit on `this`)
 	- \[book\] [YDKJS - this & object prototypes ch 1+2](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md) 🌯🌯🌯
 2. prototypes & inheritance
-	- \[book\] [Object-Oriented JavaScript - ch 5+6](ftp://ftp.micronet-rostov.ru/linux-support/books/programming/JavaScript/[Packt]%20-%20Object-Oriented%20JavaScript%20-%20[Stefanov].pdf) 🌯🌯🌯🌯
+	- \[book\] <a href="ftp://ftp.micronet-rostov.ru/linux-support/books/programming/JavaScript/[Packt]%20-%20Object-Oriented%20JavaScript%20-%20[Stefanov].pdf">Stoyan Stefanov - Object-Oriented JavaScript ch 5+6</a> 🌯🌯🌯🌯
 	- \[book\] [YDKJS - this & object prototypes ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md) 🌯🌯🌯🌯
 3. closures
 	- \[book\] [YDKJS - scope & closures ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md) 🌯🌯🌯🌯
