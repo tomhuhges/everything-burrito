@@ -1,6 +1,8 @@
 <a href="https://www.youtube.com/watch?v=xDButnEa320">![everything burrito](/everything-burrito.png)</a>
 *what it feels like to learn js*
 
+| *what it feels like to learn js* |
+
 # learning js
 
 this is a syllabus of everything i either used or didnt use to learn front end js to a decent level. it's based on a hellish trello board i kept that rapidly grew out of my control. 
