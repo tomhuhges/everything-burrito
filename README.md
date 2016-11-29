@@ -13,11 +13,12 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 1. the basics
 2. in-built methods & objects
-3. advanced js concepts
+3. intermediate js concepts
 	1. passing by value/reference
 	2. recursive functions
 	3. callbacks
 	7. the event loop
+4. advanced js concepts
 	4. this
 	5. prototypes
 	6. closures
@@ -92,39 +93,64 @@ the most useful/interesting ones:
 ----
 
 ### 3. advanced js concepts
-	1. passing by value/reference
-	2. recursive functions
-	3. callbacks
-	7. the event loop
-	4. this
-	5. prototypes
-	6. closures
-	8. namespacing & modules
+
+1. passing by value/reference
+2. recursive functions
+3. callbacks
+7. the event loop
+
+----
+
+### 4. intermediate js concepts
+
+4. this
+5. prototypes
+6. closures
+8. namespacing & modules
 
 ----
 
 ### 4. bom, dom & events (aka makin' websites)
-	1. bom
-	2. dom
-	3. events
+
+1. bom
+2. dom
+3. events
 
 ----
 
 ### 5. object oriented js + mvc
-	1. mvc
-	2. oojs
+
+1. mvc
+2. oojs
 
 ----
 
 ### 6. tdd
-	1. vanilla testing
-	2. mocha
+
+1. vanilla testing
+2. mocha
 
 ----
 
 ### 7. node.js & npm
-	1. node.js
-	2. npm
+
+```js
+// the only things you'll really need to know about npm are that it's where modules other people have
+// written are stored and you can install them on your computer like this:
+
+npm i dependency-name
+
+// to install locally in your project, do:
+
+npm i -D dependency-name
+
+// learning node at at least some level is good, even if you don't plan to use it. it'll help you understand
+npm, modules and web tooling a bit better
+```
+
+- \[mooc\] [nodeschool.io learn-you-node](https://github.com/workshopper/learnyounode) 🌯🌯🌯
+- \[mooc\] [FreeCodeCamp - Backend Certificate](https://www.freecodecamp.com/challenges/use-the-javascript-console) (includes learn-you-node) 🌯🌯🌯
+- \[further reading\] [node-for-beginners](https://github.com/rockbot/node-for-beginners) 🌯🌯🌯 - 🌯🌯🌯🌯🌯
 
 ----
 
