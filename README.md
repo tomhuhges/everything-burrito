@@ -46,7 +46,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ### 1. the basics
 
-```
+```js
 /*
 	the different data types, how they're written, and how they work.
 	- values (booleans, numbers, strings)
@@ -74,7 +74,8 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ----
 
 ### 2. in-built methods & objects
-```
+
+```js
 // the most useful/interesting ones:
 // - number - isNan, toFixed
 // - string - split, join, toLowerCase, toUpperCase, indexOf, search, match, replace, repeat
@@ -92,7 +93,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ----
 
-### 3. advanced js concepts
+### 3. intermediate js concepts
 
 1. passing by value/reference
 2. recursive functions
@@ -101,12 +102,22 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ----
 
-### 4. intermediate js concepts
+### 4. advanced js concepts
 
-4. this
-5. prototypes
-6. closures
-8. namespacing & modules
+```js
+// i recommend reading the entirety of You Don't Know JS (YDKJS) by Kyle Simpson if you can
+// the full book is online: https://github.com/getify/You-Dont-Know-JS
+```
+
+1. this
+- \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯 (has a good bit on `this`)
+- \[book\] [YDKJS - this & object prototypes ch 1+2](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md) 🌯🌯🌯
+2. prototypes & inheritance
+- \[book\] [Object-Oriented JavaScript - ch 5+6](ftp://ftp.micronet-rostov.ru/linux-support/books/programming/JavaScript/[Packt]%20-%20Object-Oriented%20JavaScript%20-%20[Stefanov].pdf) 🌯🌯🌯🌯
+- \[book\] [YDKJS - this & object prototypes ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md) 🌯🌯🌯🌯
+3. closures
+- \[book\] [YDKJS - scope & closures ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md) 🌯🌯🌯🌯
+4. namespacing & modules
 
 ----
 
@@ -120,8 +131,10 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ### 5. object oriented js + mvc
 
-1. mvc
-2. oojs
+- \[mooc\] [Watch And Code - Practical JS](https://watchandcode.com/p/practical-javascript) 🌯🌯 (make a todo app with OOJS)
+- \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯
+- \[mooc\] [Udacity - JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989) 🌯🌯🌯 (OOJS is technically a design pattern, hence the title of this. See ch 10 for extra design patterns)
+- \[book\] [YDKJS - this & object prototypes ch 4](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md)
 
 ----
 
@@ -145,7 +158,7 @@ npm i dependency-name
 npm i -D dependency-name
 
 // learning node at at least some level is good, even if you don't plan to use it. it'll help you understand
-npm, modules and web tooling a bit better
+// npm, modules and web tooling a bit better
 ```
 
 - \[mooc\] [nodeschool.io learn-you-node](https://github.com/workshopper/learnyounode) 🌯🌯🌯
