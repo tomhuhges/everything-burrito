@@ -28,14 +28,8 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	2. dom
 	3. events
 5. object oriented js + mvc
-	1. mvc
-	2. oojs
 6. tdd
-	1. vanilla testing
-	2. mocha
 7. node.js & npm
-	1. node.js
-	2. npm
 8. common.js & amd
 9. gulp & webpack
 10. design patterns
@@ -47,17 +41,17 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ### 1. the basics
 
 ```js
-/*
-	the different data types, how they're written, and how they work.
-	- values (booleans, numbers, strings)
-	- operators
-	- other values (null, undefined, NaN)
-	- arrays
-	- functions
-	- objects
-	- control flow (if, else if, else)
-	- loops (for, while, do-while)
-*/
+
+// the different data types, how they're written, and how they work.
+// - values (booleans, numbers, strings)
+// - operators
+// - other values (null, undefined, NaN)
+// - arrays
+// - functions
+// - objects
+// - control flow (if, else if, else)
+// - loops (for, while, do-while)
+
 ```
 
 - \[mooc\] [Codecademy - Learn JavaScript](https://www.codecademy.com/learn/learn-javascript) 🌯
@@ -196,7 +190,7 @@ npm i -D dependency-name
 
 ### 9. gulp & webpack
 
-```
+```js
 // i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is
 // a great replacement for gulp. you should definitely learn webpack.
 ```
@@ -226,7 +220,7 @@ webpack
 // - factory
 // - decorator
 
-the resources below individually cover all of these
+// the resources below individually cover all of these
 ```
 
 - \[(paid) mooc\] [Mastering JS Design Patterns](https://www.packtpub.com/web-development/mastering-javascript-design-patterns-practical-introduction-building-better-applicat) 🌯🌯🌯🌯
@@ -235,6 +229,9 @@ the resources below individually cover all of these
 ----
 
 ### 11. functional js
+
+- currying
+- monads
 
 ----
 
