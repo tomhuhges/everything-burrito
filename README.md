@@ -18,23 +18,23 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	2. recursive functions
 	3. callbacks
 	7. the event loop
-4. advanced js concepts
-	4. this
-	5. prototypes
-	6. closures
-	8. namespacing & modules
 4. bom, dom & events (aka makin' websites)
 	1. bom
 	2. dom
 	3. events
-5. object oriented js + mvc
-6. tdd
-7. node.js & npm
-8. common.js & amd
-9. gulp & webpack
-10. design patterns
-11. functional js
-12. react & redux
+5. advanced js concepts
+	4. `this`
+	5. prototypes
+	6. closures
+	8. namespacing & modules
+6. object oriented js + mvc
+7. tdd
+8. node.js & npm
+9. common.js & amd
+10. gulp & webpack
+11. design patterns
+12. functional js
+13. react & redux
 
 ----
 
@@ -76,11 +76,11 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 // - array - pop/push/shift/unshift, forEach, map, filter, reduce, sort, concat, every, some, from (loads!)
 // - object - hasOwnProperty, Object.create, Object.assign, Object.keys
 // - function - apply, call, bind
-// - math + date
+// - regexp, math + date
 ```
 
 - \[book\] [Eloquent JS - Ch. 5: Higher-Order Functions](http://eloquentjavascript.net/05_higher_order.html) 🌯🌯
-- \[mooc\] [FreeCodeCamp - the rest of the course](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
+- \[mooc\] [FreeCodeCamp - the rest of the Frontend Certificate](https://www.freecodecamp.com/challenges/comment-your-javascript-code) 🌯🌯
 - \[reference\] [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) 🌯🌯
 - \[training\] [Codewars (6kyu & 5kyu)](https://www.codewars.com/) 🌯🌯
 - \[article\] [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/) 🌯🌯🌯 (requires understanding of `this`, see ch 3)
@@ -90,32 +90,16 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ### 3. intermediate js concepts
 
 1. passing by value/reference
+	- \[article\] [JavaScript  -  call-by-sharing](https://medium.com/wwstay-engineering/javascript-call-by-sharing-2d3ca42c4d02#.ay19h5vuz)
 
 2. recursive functions
+	- \[mooc\] [Codeacademy - Recursion in JavaScript](https://www.codecademy.com/courses/javascript-lesson-205/0/1) 🌯🌯
 
 3. callbacks
+	- \[article\] [Understand JavaScript Callback Functions and Use Them](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/) 🌯🌯
 
 4. the event loop
 	- \[video\] [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) 🌯🌯🌯
-
-----
-
-### 4. advanced js concepts
-
-```js
-// i recommend reading the entirety of You Don't Know JS (YDKJS) by Kyle Simpson if you can
-// the full book is online: https://github.com/getify/You-Dont-Know-JS
-```
-
-1. `this`
-	- \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯 (has a good bit on `this`)
-	- \[book\] [YDKJS - this & object prototypes ch 1+2](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md) 🌯🌯🌯
-2. prototypes & inheritance
-	- \[book\] <a href="ftp://ftp.micronet-rostov.ru/linux-support/books/programming/JavaScript/[Packt]%20-%20Object-Oriented%20JavaScript%20-%20[Stefanov].pdf">Stoyan Stefanov - Object-Oriented JavaScript ch 5+6</a> 🌯🌯🌯🌯
-	- \[book\] [YDKJS - this & object prototypes ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md) 🌯🌯🌯🌯
-3. closures
-	- \[book\] [YDKJS - scope & closures ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md) 🌯🌯🌯🌯
-4. namespacing & modules
 
 ----
 
@@ -127,7 +111,26 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ----
 
-### 5. object oriented js + mvc
+### 5. advanced js concepts
+
+```js
+// i recommend reading the entirety of You Don't Know JS (YDKJS) by Kyle Simpson if you can
+// the full book is online: https://github.com/getify/You-Dont-Know-JS
+```
+
+1. `this`
+	- \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯 (has a good bit on `this`)
+	- \[book\] [YDKJS - this & object prototypes ch 1+2](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md) 🌯🌯🌯
+2. prototypes & inheritance
+	- \[book\] [Stoyan Stefanov - Object-Oriented JavaScript ch 5+6](https://www.amazon.com/Object-Oriented-JavaScript-high-quality-applications-libraries/dp/1847194141) 🌯🌯🌯🌯
+	- \[book\] [YDKJS - this & object prototypes ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md) 🌯🌯🌯🌯
+3. closures
+	- \[book\] [YDKJS - scope & closures ch 5](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md) 🌯🌯🌯🌯
+4. namespacing & modules
+
+----
+
+### 6. object oriented js + mvc
 
 - \[mooc\] [Watch And Code - Practical JS](https://watchandcode.com/p/practical-javascript) 🌯🌯 (make a todo app with OOJS)
 - \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯
@@ -136,14 +139,14 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ----
 
-### 6. tdd
+### 7. tdd
 
-- \[(paid) mooc\] [Watch And Code Premium - Test Driven Development](https://watchandcode.com/p/premium) 🌯🌯🌯 (just vanilla js)
+- \[$$$ mooc\] [Watch And Code Premium - Test Driven Development](https://watchandcode.com/p/premium) 🌯🌯🌯 (just vanilla js)
 - \[mooc\] [Udacity - JavaScript Testing](https://www.udacity.com/course/javascript-testing--ud549) 🌯🌯🌯 (vanilla + jasmine)
 
 ----
 
-### 7. node.js & npm
+### 8. node.js & npm
 
 ```js
 // the only things you'll really need to know about npm are that it's where modules other people have
@@ -165,7 +168,7 @@ npm i -D dependency-name
 
 ----
 
-### 8. commonjs & amd
+### 9. commonjs & amd
 
 ```js
 // tldr: both are ways to load modules.
@@ -192,7 +195,7 @@ npm i -D dependency-name
 
 ----
 
-### 9. gulp & webpack
+### 10. gulp & webpack
 
 ```js
 // i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is
@@ -211,7 +214,7 @@ webpack
 
 ----
 
-### 10. design patterns
+### 11. design patterns
 
 ```js
 // MVC, OOJS and modules are actually design patterns that help keep your code maintainable.
@@ -227,19 +230,19 @@ webpack
 // the resources below individually cover all of these
 ```
 
-- \[(paid) mooc\] [Mastering JS Design Patterns](https://www.packtpub.com/web-development/mastering-javascript-design-patterns-practical-introduction-building-better-applicat) 🌯🌯🌯🌯
+- \[$$$ mooc\] [Mastering JS Design Patterns](https://www.packtpub.com/web-development/mastering-javascript-design-patterns-practical-introduction-building-better-applicat) 🌯🌯🌯🌯
 - \[book\] [Addy Osmani - Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) 🌯🌯🌯🌯🌯
 
 ----
 
-### 11. functional js
+### 12. functional js
 
 - currying
 - monads
 
 ----
 
-### 12. react & redux
+### 13. react & redux
 
 - \[mooc\] [Codeacademy - Learn ReactJS: Part I](https://www.codecademy.com/learn/react-101) 🌯🌯🌯
 - \[book\] [SurviveJS - Become a React Master](http://survivejs.com/react/) 🌯🌯🌯🌯🌯
