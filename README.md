@@ -109,7 +109,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 // the full book is online: https://github.com/getify/You-Dont-Know-JS
 ```
 
-1. this
+1. `this`
 	- \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯 (has a good bit on `this`)
 	- \[book\] [YDKJS - this & object prototypes ch 1+2](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md) 🌯🌯🌯
 2. prototypes & inheritance
@@ -134,14 +134,14 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 - \[mooc\] [Watch And Code - Practical JS](https://watchandcode.com/p/practical-javascript) 🌯🌯 (make a todo app with OOJS)
 - \[mooc\] [Udacity - Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015) 🌯🌯🌯
 - \[mooc\] [Udacity - JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989) 🌯🌯🌯 (OOJS is technically a design pattern, hence the title of this. See ch 10 for extra design patterns)
-- \[book\] [YDKJS - this & object prototypes ch 4](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md)
+- \[book\] [YDKJS - this & object prototypes ch 4](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md) 🌯🌯🌯
 
 ----
 
 ### 6. tdd
 
-1. vanilla testing
-2. mocha
+- \[(paid) mooc\] [Watch And Code Premium - Test Driven Development](https://watchandcode.com/p/premium) 🌯🌯🌯 (just vanilla js)
+- \[mooc\] [Udacity - JavaScript Testing](https://www.udacity.com/course/javascript-testing--ud549) 🌯🌯🌯 (vanilla + jasmine)
 
 ----
 
@@ -214,6 +214,23 @@ webpack
 ----
 
 ### 10. design patterns
+
+```js
+// MVC, OOJS and modules are actually design patterns that help keep your code maintainable.
+// some other key design patterns to learn are:
+
+// - getters & setters
+// - singleton
+// - pub-sub / observer
+// - mixin
+// - factory
+// - decorator
+
+the resources below individually cover all of these
+```
+
+- \[(paid) mooc\] [Mastering JS Design Patterns](https://www.packtpub.com/web-development/mastering-javascript-design-patterns-practical-introduction-building-better-applicat) 🌯🌯🌯🌯
+- \[book\] [Addy Osmani - Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) 🌯🌯🌯🌯🌯
 
 ----
 
