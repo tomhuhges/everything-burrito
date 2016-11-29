@@ -1,4 +1,4 @@
-![<img src="/everything-burrito.png">](https://www.youtube.com/watch?v=xDButnEa320)
+<a href="https://www.youtube.com/watch?v=xDButnEa320">![everything burrito](/everything-burrito.png)</a>
 *what it feels like to learn js*
 
 # learning js
