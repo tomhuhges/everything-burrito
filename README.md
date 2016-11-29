@@ -18,10 +18,9 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 	2. recursive functions
 	3. callbacks
 	7. the event loop
-4. bom, dom & events (aka makin' websites)
-	1. bom
-	2. dom
-	3. events
+4. dom & events (aka makin' websites)
+	1. dom
+	2. events
 5. advanced js concepts
 	4. `this`
 	5. prototypes
@@ -90,7 +89,7 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 ### 3. intermediate js concepts
 
 1. passing by value/reference
-	- \[article\] [JavaScript  -  call-by-sharing](https://medium.com/wwstay-engineering/javascript-call-by-sharing-2d3ca42c4d02#.ay19h5vuz)
+	- \[article\] [JavaScript  -  call-by-sharing](https://medium.com/wwstay-engineering/javascript-call-by-sharing-2d3ca42c4d02#.ay19h5vuz) 🌯🌯
 
 2. recursive functions
 	- \[mooc\] [Codeacademy - Recursion in JavaScript](https://www.codecademy.com/courses/javascript-lesson-205/0/1) 🌯🌯
@@ -103,11 +102,11 @@ i've rated everything from 1-5 burritos (🌯) depending on the skill level requ
 
 ----
 
-### 4. bom, dom & events (aka makin' websites)
+### 4. dom & events (aka makin' websites)
 
-1. bom
-2. dom
-3. events
+1. dom
+	- \[book\] [Eloquent JavaScript - ch 13 The Document Object Model](http://eloquentjavascript.net/13_dom.html) 🌯🌯
+2. events
 
 ----
 
