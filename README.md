@@ -137,7 +137,8 @@ but you should use es2015 modules anyway
 ### 9. gulp & webpack
 
 ```
-i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is a good replacement for gulp. you should definitely learn webpack.
+i learned gulp first, which i thought was useful (and fun! i recommend it!). but then i learned webpack and it is
+a great replacement for gulp. you should definitely learn webpack.
 ```
 
 gulp 
