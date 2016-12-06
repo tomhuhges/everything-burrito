@@ -88,6 +88,10 @@ define([
 			button1 = D$.create('button', {parent: buttonsContainer, className: 'btn btn-xs btn-danger'});
 			D$.create('span', {parent: button1, className: 'glyphicon glyphicon-remove'});
 
+			D$.on(button1, 'click', function(){
+				self.onEvent("remove");
+			});
+
 			button2 = D$.create('button', {parent: buttonsContainer, className: 'btn btn-xs btn-primary'});
 			D$.create('span', {parent: button2, className: 'glyphicon glyphicon-play'});
 
@@ -96,6 +100,10 @@ define([
 			});
 
 		}
+
+		TrackView.prototype.destroy = function() {
+			this.$row.parentNode.removeChild(this.$row);
+		};
 
 		return TrackView;
 

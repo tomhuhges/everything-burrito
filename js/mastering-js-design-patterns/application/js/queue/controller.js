@@ -39,33 +39,53 @@ define([
 			}
 		}
 
+		QueueController.prototype.getTrackIndex = function(track) {
+			for ( var i=0; i<this.collection.length;i++) {
+				if (this.collection[i].model.get("id") === track.id) {
+					return i
+				}
+			}
+			return -1;
+		}
+
 		QueueController.prototype.initHooks = function() {
 			PubSub.on('player:play', function(track){
-				for ( var i=0;i<this.collection.length;i++) {
-					if ( this.collection[i].model.get('id') === track.id ) {
-						this.currentIndex = i;
-						break;
-					}
-				}
-			}, this);
-
-			PubSub.on('request:queue:play', function(track){
-				for ( var i=0; i<this.collection.length;i++) {
-					if (this.collection[i].model.get('id') === track.id ) {
-						PubSub.trigger("request:player:play", this.collection[i].model.toJSON());
-					}
-				}
-			}, this);
-
-			PubSub.on('request:queue:next', function() {
+				this.currentIndex = this.getTrackIndex(track);
+			}, this)
+				
+				.on('request:queue:play', function(track){
+				var trackIndex = this.getTrackIndex(track);
+				PubSub.trigger("request:player:play", this.collection[trackIndex].model.toJSON() )
+			}, this)
+				
+				.on('request:queue:next', function() {
 				if ( this.collection.length > this.currentIndex + 1 ) {
 					PubSub.trigger('request:player:play', this.collection[this.currentIndex + 1].model.toJSON());
+				}
+			}, this)
+
+				.on('request:queue:index', function (index) {
+				if (this.collection.length > index ) {
+					PubSub.trigger('request:player:play', this.collection[index].model.toJSON() );
+				}
+			}, this)
+
+				.on('request:queue:remove', function(track) {
+				var trackIndex = this.getTrackIndex(track);
+
+				this.collection[trackIndex].destroy();
+				this.collection.splice(trackIndex, 1);
+
+				if (trackIndex == this.currentIndex ) {
+					PubSub.trigger('request:queue:index', Math.min(this.collection.length - 1, this.currentIndex))
+				} else if ( trackIndex < this.currentIndex ) {
+					this.currentIndex -= 1;
 				}
 			}, this);
 		}
 
 		QueueController.prototype.loadData = function() {
-			this.collection = TracksCollection;
+			this.collection = TracksCollection.getTracks();
 		}
 
 		QueueController.prototype.render = function() {

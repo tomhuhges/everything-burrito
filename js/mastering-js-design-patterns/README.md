@@ -11,6 +11,7 @@
 - [mixins pattern](#mixins-pattern)
 - [mvc / mvp / mvvc](#mvc-mvp-mvvc)
 - [factory pattern](#factory-pattern)
+- [lazy initialisation](#lazy-initialisation)
 
 ----
 
@@ -269,12 +270,29 @@ function ModelFactory(type, data) {
 }
 ```
 
-The different models (`AlbumModel`, `SingleModel` and `TrackModel`) are defined in other modules and all have their own idiosyncracies. However, we can create any one of them with a single call:
+the different models (`AlbumModel`, `SingleModel` and `TrackModel`) are defined in other modules and all have their own idiosyncracies. however, we can create any one of them with a single call:
 
 ```js
 ModelFactory('album', { /* data */ })
 ```
 
+----
+
+### lazy initialisation
+
+as a simple example, we tweaked the loading of our track data so that, rather than loading every time, it checked to see if the data was already loaded to save redoing an expensive process (creating a new array and pushing elements to it) if it wasn't required.
+
+articles on lazy loading:  
+[How to Speed Up Lo-Dash ×100? Introducing Lazy Evaluation.](http://filimanjaro.com/blog/2014/introducing-lazy-evaluation/)
+
+i think you can also do this with callbacks as below
+
+### usage
+```js
+function (thing, callback) {
+	if (thing) callback()
+}
+```
 
 
 

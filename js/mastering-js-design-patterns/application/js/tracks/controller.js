@@ -13,13 +13,15 @@ define([
 		}
 
 		TrackController.prototype.hookGlobalEvents = function() {
-			PubSub.on("player:play", function(track){
+			this._onPlayerPlay = function(track){
 				if ( track.id === this.model.get('id') ){
 					this.model.set('isActive', true);
 				} else {
 					this.model.set('isActive', false);
 				}
-			}, this);
+			}
+
+			PubSub.on("player:play", this._onPlayerPlay, this);
 		};
 
 		TrackController.prototype.show = function() {
@@ -37,17 +39,23 @@ define([
 		// called from view
 		TrackController.prototype.onEvent = function(action, value) {
 			if ( action === "play" ) {
-				PubSub.trigger("request:queue:play", this.getModelData());
+				PubSub.trigger("request:queue:play", this.model.toJSON());
 			} else if ( action === "input" ) {
 				this.model.set('title', value);
+			} else if ( action === "remove" ) {
+				PubSub.trigger("request:queue:remove", this.model.toJSON())
 			}
 		};
 
 		TrackController.prototype.getModelData = function() {
 			var data = this.model.toJSON();
 			data.duration = Math.floor(data.duration / 60) + ":" + ("0" + data.duration % 60).slice(-2);
-			console.log(data);
 			return data;
+		};
+
+		TrackController.prototype.destroy = function() {
+			this.view.destroy();
+			PubSub.off("player:play", this._onPlayerPlay, this);
 		};
 
 		return TrackController;

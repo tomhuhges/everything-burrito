@@ -17,6 +17,7 @@ define([], function(){
 			self = self || null;
 			this.ensureTopicExists(topic);
 			this._observers[topic].push({callback: callback, self: self});
+			return this;
 		},
 		off: function( topic, callback ) {
 			this.ensureTopicExists(topic);
@@ -25,6 +26,7 @@ define([], function(){
 					this._observers[topic].splice(i,1);
 				}
 			}
+			return this;
 		},
 		trigger: function( topic ) {
 			if ( this._observers.hasOwnProperty(topic)) {
@@ -32,6 +34,7 @@ define([], function(){
 					this._observers[topic][i].callback.apply(this._observers[topic][i].self, Array.prototype.slice.call(arguments, 1));
 				}
 			}
+			return this;
 		}
 	};
 
