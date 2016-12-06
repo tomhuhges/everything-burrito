@@ -20,8 +20,6 @@ define([
 				}
 			}
 
-			this.currentIndex = -1;
-
 			this.initHooks();
 
 			if (options.autoload) {
@@ -33,66 +31,47 @@ define([
 			}
 
 			if (options.autoplay) {
-				if (this.collection && this.collection.length) {
-					PubSub.trigger('request:player:play', this.collection[0].model.toJSON());
-				}
+				PubSub.trigger("request:queue:next");
 			}
-		}
-
-		QueueController.prototype.getTrackIndex = function(track) {
-			for ( var i=0; i<this.collection.length;i++) {
-				if (this.collection[i].model.get("id") === track.id) {
-					return i
-				}
-			}
-			return -1;
 		}
 
 		QueueController.prototype.initHooks = function() {
-			PubSub.on('player:play', function(track){
-				this.currentIndex = this.getTrackIndex(track);
-			}, this)
-				
+			PubSub
+				// needs fixing
 				.on('request:queue:play', function(track){
-				var trackIndex = this.getTrackIndex(track);
-				PubSub.trigger("request:player:play", this.collection[trackIndex].model.toJSON() )
-			}, this)
+					this.collection.reset();
+					while ( this.collection.hasNext() ) {
+						if ( this.collection.next().value.model.get('id') === track.id ) {
+							PubSub.trigger("request:player:play", this.collection.current().value.model.toJSON());
+							break;
+						}
+					}
+				}, this)
 				
 				.on('request:queue:next', function() {
-				if ( this.collection.length > this.currentIndex + 1 ) {
-					PubSub.trigger('request:player:play', this.collection[this.currentIndex + 1].model.toJSON());
-				}
-			}, this)
-
-				.on('request:queue:index', function (index) {
-				if (this.collection.length > index ) {
-					PubSub.trigger('request:player:play', this.collection[index].model.toJSON() );
-				}
-			}, this)
+					if ( this.collection.hasNext() ) {
+						PubSub.trigger('request:player:play', this.collection.next().value.model.toJSON());
+					}
+				}, this)
 
 				.on('request:queue:remove', function(track) {
-				var trackIndex = this.getTrackIndex(track);
+					if ( this.collection.current().value && this.collection.current().value.model.get('id') === track.id) {
+						PubSub.trigger("request:queue:next");
+					}
 
-				this.collection[trackIndex].destroy();
-				this.collection.splice(trackIndex, 1);
-
-				if (trackIndex == this.currentIndex ) {
-					PubSub.trigger('request:queue:index', Math.min(this.collection.length - 1, this.currentIndex))
-				} else if ( trackIndex < this.currentIndex ) {
-					this.currentIndex -= 1;
-				}
+					this.collection.removeByID(track.id);
 			}, this);
 		}
 
 		QueueController.prototype.loadData = function() {
-			this.collection = TracksCollection.getTracks();
+			this.collection = TracksCollection();
 		}
 
 		QueueController.prototype.render = function() {
 			if ( this.view == null ) {
-				this.view = new TracksView(this.collection);
+				this.view = new TracksView();
 			}
-			this.view.render();
+			this.view.render(TracksCollection());
 		}
 
 		return QueueController;

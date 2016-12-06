@@ -9,6 +9,8 @@ define([
 		function TrackController( type, data ) {
 			this.model = ModelFactory(type, data);
 			this.view = new TrackView(this.onEvent.bind(this));
+			this.childTracks = [];
+			this.setNestingLevel(1);
 			this.hookGlobalEvents();
 		}
 
@@ -24,10 +26,26 @@ define([
 			PubSub.on("player:play", this._onPlayerPlay, this);
 		};
 
+		TrackController.prototype.addChild = function(trackController) {
+			trackController.setNestingLevel(this.nestingLevel + 1 );
+			this.childTracks.push(trackController);
+		};
+
+		TrackController.prototype.setNestingLevel = function(level) {
+			this.nestingLevel = level;
+			this.model.set('nestingLevel', level);
+			for ( var i=0; i<this.childTracks.length; i++ ) {
+				this.childTracks[i].setNestingLevel(level + 1);
+			}
+		};
+
 		TrackController.prototype.show = function() {
 			this.view.render(this.getModelData());
+			for ( var i=0; i<this.childTracks.length; i++ ) {
+				this.childTracks[i].show();
+			}
 			this.hookModelEvents();
-		}
+		};
 
 		TrackController.prototype.hookModelEvents = function() {
 			var self = this;
@@ -49,7 +67,9 @@ define([
 
 		TrackController.prototype.getModelData = function() {
 			var data = this.model.toJSON();
-			data.duration = Math.floor(data.duration / 60) + ":" + ("0" + data.duration % 60).slice(-2);
+			if ( data.duration ) {
+				data.duration = Math.floor(data.duration / 60) + ":" + ("0" + data.duration % 60).slice(-2);
+			}
 			return data;
 		};
 

@@ -9,9 +9,11 @@
 - [pubsub pattern](#pubsub-pattern)
 - [prototypal inheritance](#prototypal-inheritance)
 - [mixins pattern](#mixins-pattern)
-- [mvc / mvp / mvvc](#mvc-mvp-mvvc)
+- [mvc / mvp / mvvc](#mvc--mvp--mvvc)
 - [factory pattern](#factory-pattern)
 - [lazy initialisation](#lazy-initialisation)
+- [generator/iterator pattern](#generatoriterator-pattern)
+- [composite pattern](#composite-pattern)
 
 ----
 
@@ -294,8 +296,41 @@ function (thing, callback) {
 }
 ```
 
+----
+
+### generator/iterator pattern
 
 
+
+##### usage
+
+```js
+// generator function
+function* generator() {
+	var num;
+	while ( num < someValue )
+		yield num++
+}
+
+var iterator = generator()
+
+// iterator
+iterator.next().value // eg. 1
+iterator.next().value // eg. 2
+iterator.next().value // eg. 3
+```
+
+useful links:  
+[MDN Iterators and Generators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+[Exploring ES6: Generators](http://exploringjs.com/es6/ch_generators.html)
+
+----
+
+### composite pattern
+
+
+
+----
 
 
 

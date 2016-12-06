@@ -9,7 +9,7 @@ define([
 
 		AlbumModel.toJSON = function() {
 			var data = Utils.clone(this.attributes);
-			data.title = '[' + data.albumYear + '] ' + data.name + ' (from ' + data.albumTitle + ')' ;
+			data.title = '[' + data.albumYear + '][album] ' + data.albumTitle ;
 			return data;
 		}
 

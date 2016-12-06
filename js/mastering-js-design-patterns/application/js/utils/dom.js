@@ -81,6 +81,10 @@ define([], function(){
 		element.style.display = state;
 	}
 
+	function setStyle( element, style, value ) {
+		element.style[style] = value
+	}
+
 	function addEventListener( element, type, callback ) {
 		if ( window.addEventListener ) {
 			element.addEventListener(type, callback);
@@ -105,6 +109,7 @@ define([], function(){
 		create: createElement,
 		text: setTextToElement,
 		display: display,
+		css: setStyle,
 		addClass: addClassName,
 		removeClass: removeClassName,
 		on: addEventListener,

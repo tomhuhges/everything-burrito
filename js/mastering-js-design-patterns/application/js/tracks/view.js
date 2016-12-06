@@ -38,6 +38,7 @@ define([
 
 				this.renderTitle(col2, data.title);
 				this.renderButtons(col4);
+				this.renderNestingLevel(col2, data.nestingLevel || 1);
 				this.isRendered = true;
 			}
 		}
@@ -100,6 +101,13 @@ define([
 			});
 
 		}
+
+		TrackView.prototype.renderNestingLevel = function(col2, level) {
+			if ( level > 1 ) {
+				D$.addClass(this.$row, 'padded');
+				D$.css(col2, 'padding-left', (level-1) * 15 + 'px')
+			}
+		};
 
 		TrackView.prototype.destroy = function() {
 			this.$row.parentNode.removeChild(this.$row);

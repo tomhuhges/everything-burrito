@@ -1,11 +1,10 @@
 define([], function() {
-	function TracksView( collection ) {
-		this.collection = collection;
-	}
+	function TracksView() { }
 
-	TracksView.prototype.render = function() {
-		for ( var i=0; i < this.collection.length; i++ ) {
-			this.collection[i].show();
+	TracksView.prototype.render = function( tracksIterator ) {
+		var track;
+		while ( track = tracksIterator.next().value) {
+			track.show();
 		}
 	};
 

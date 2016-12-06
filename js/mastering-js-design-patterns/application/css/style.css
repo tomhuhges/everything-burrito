@@ -5,3 +5,15 @@ body{
 .table tr .btn+.btn {
 	margin-left: 4px;
 }
+
+.table tr.padded td:nth-child(2) {
+	position: relative;
+}
+
+.table tr.padded td:nth-child(2):before {
+	content: ">";
+	font-size: 10px;
+	font-weight: bold;
+	padding: 0 10px 0 0;
+	vertical-align: text-top;
+}
