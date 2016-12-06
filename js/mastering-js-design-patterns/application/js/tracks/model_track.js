@@ -36,8 +36,6 @@ define([
 			}
 		}
 
-		return function( data ) {
-			return Object.create(TrackModel).init(data);
-		}
+		return TrackModel;
 
 	});

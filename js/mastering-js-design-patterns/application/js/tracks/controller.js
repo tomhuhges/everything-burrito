@@ -1,13 +1,13 @@
 define([
-	'tracks/model',
+	'tracks/model_factory',
 	'tracks/view',
 	'utils/pubsub'
 	],
 
-	function( TrackModel, TrackView, PubSub ) {
+	function( ModelFactory, TrackView, PubSub ) {
 
-		function TrackController( data ) {
-			this.model = TrackModel(data);
+		function TrackController( type, data ) {
+			this.model = ModelFactory(type, data);
 			this.view = new TrackView(this.onEvent.bind(this));
 			this.hookGlobalEvents();
 		}

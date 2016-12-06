@@ -9,6 +9,8 @@
 - [pubsub pattern](#pubsub-pattern)
 - [prototypal inheritance](#prototypal-inheritance)
 - [mixins pattern](#mixins-pattern)
+- [mvc / mvp / mvvc](#mvc-mvp-mvvc)
+- [factory pattern](#factory-pattern)
 
 ----
 
@@ -179,6 +181,8 @@ var emit = function( event ) {
 
 ```
 
+----
+
 ### prototypal inheritance
 
 we added the pubsub pattern to the tracks and split them into individual components using a mix of constructor functions and `Object.create`. towards the end of this section, my app had a few errors when it shouldn't have. i went through each error in the console by checking the line numbers and files and finally got to a point where there were no errors. however, the tracks in the queue were duplicated. instead of reading 1,2,3 it read 3,3,3. i used the debugger to step through the track view creation and saw that each track constructor was being passed the correct data, and that was creating the correct instance in the model, but when it came to render the list, the data in the model was changed.
@@ -200,6 +204,8 @@ return function( data ) {
 ```
 
 so it was just an annoying misplaced parenthesis, but it taught me how prototypes can sometimes hide errors if they can find what they want up the prototype chain, rather than where it should be.
+
+---
 
 ### mixin pattern
 
@@ -227,11 +233,52 @@ var newObj2 = new Obj();
 newObj2.sayHello() // 'hello'
 ```
 
+----
+
 ### mvc / mvp / mvvm
 
 **mvc** - the controller reacts to events and updates the model when data is changed via the view  
 **mvp** - some controller functionality is handed off to the view. the presenter just updates the model and view  
 **mvvm** - the view doesn't have any functional code at all, it just displays data. the viewmodel instead handles all events, updating both the model and the view.
+
+----
+
+### factory pattern
+
+factories are useful when we need to create lots of objects that are similar but may have a few differences. in our case we created a track factory that is able to create 3 different track types - a standalone track, a single, and an album track.
+
+##### usage
+
+```js
+// factory function
+function ModelFactory(type, data) {
+	var Model;
+
+	Model = type === 'album'
+	? AlbumModel
+
+	: type === 'single'
+	? SingleModel
+
+	: type === 'track'
+	? TrackModel
+
+	: TrackModel
+
+	return Object.create(Model).init(data)
+}
+```
+
+The different models (`AlbumModel`, `SingleModel` and `TrackModel`) are defined in other modules and all have their own idiosyncracies. However, we can create any one of them with a single call:
+
+```js
+ModelFactory('album', { /* data */ })
+```
+
+
+
+
+
 
 
 
