@@ -332,7 +332,24 @@ useful links:
 
 ----
 
+### simple node/express server
 
+##### usage
+
+```js
+// server.js
+var express = require('express');
+var TracksCollection = require('./tracks/collection');
+
+var app = express();
+
+app.use(express.static('application')); // our project dir
+app.get('/tracks', function(req, res){
+	res.json(TracksCollection.getTracksTree()); // returns JSON data from our TracksCollection class
+});
+
+app.listen(3000);
+```
 
 
 
