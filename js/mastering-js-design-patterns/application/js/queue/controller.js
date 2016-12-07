@@ -22,16 +22,25 @@ define([
 
 			this.initHooks();
 
+			var self = this;
+
 			if (options.autoload) {
-				this.loadData();
-			}
-
-			if (options.autorender) {
-				this.render();
-			}
-
-			if (options.autoplay) {
-				PubSub.trigger("request:queue:next");
+				this
+					.loadData()
+					.then(function(data){
+						console.log('we have data', data)
+					})
+					.then(function(){
+						if (options.autorender)
+							self.render();
+					})
+					.then(function(){
+						if (options.autoplay)
+							PubSub.trigger("request:queue:next")
+					})
+					.catch(function(err){
+						console.error(err)
+					})
 			}
 		}
 
@@ -63,8 +72,10 @@ define([
 			}, this);
 		}
 
-		QueueController.prototype.loadData = function() {
+		QueueController.prototype.loadData = function(callback) {
 			this.collection = TracksCollection();
+
+			return this.collection.loadFrom('/tracks')
 		}
 
 		QueueController.prototype.render = function() {

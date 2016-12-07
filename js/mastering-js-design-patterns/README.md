@@ -14,6 +14,8 @@
 - [lazy initialisation](#lazy-initialisation)
 - [generator/iterator pattern](#generatoriterator-pattern)
 - [composite pattern](#composite-pattern)
+- [simple node/express server](#simple-nodeexpress-server)
+- [promises](#promises)
 
 ----
 
@@ -350,6 +352,14 @@ app.get('/tracks', function(req, res){
 
 app.listen(3000);
 ```
+
+----
+
+### promises
+
+
+
+
 
 
 
