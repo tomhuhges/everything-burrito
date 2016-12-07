@@ -9,7 +9,7 @@
 - [pubsub pattern](#pubsub-pattern)
 - [prototypal inheritance](#prototypal-inheritance)
 - [mixins pattern](#mixins-pattern)
-- [mvc / mvp / mvvc](#mvc--mvp--mvvc)
+- [mvc / mvp / mvvm](#mvc--mvp--mvvm)
 - [factory pattern](#factory-pattern)
 - [lazy initialisation](#lazy-initialisation)
 - [generator/iterator pattern](#generatoriterator-pattern)

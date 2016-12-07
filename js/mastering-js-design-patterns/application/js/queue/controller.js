@@ -59,7 +59,7 @@ define([
 						PubSub.trigger("request:queue:next");
 					}
 
-					this.collection.removeByID(track.id);
+					this.collection.removeById(track.id);
 			}, this);
 		}
 

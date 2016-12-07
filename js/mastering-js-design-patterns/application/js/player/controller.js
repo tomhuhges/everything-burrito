@@ -27,6 +27,10 @@ define([
 			return false;
 		}
 
+		if ( !track.isPlayable ) {
+			return PubSub.trigger("request:queue:next")
+		}
+
 		if ( !playerState.track || track.id !== playerState.track.id ) {
 			clearInterval(playerState.interval);
 			playerState.progress = 0;

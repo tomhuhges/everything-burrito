@@ -1,18 +1,22 @@
 define([
 	'tracks/model_factory',
 	'tracks/view',
-	'utils/pubsub'
+	'utils/pubsub',
+	'utils/iterator_mixin',
+	'utils/util'
 	],
 
-	function( ModelFactory, TrackView, PubSub ) {
+	function( ModelFactory, TrackView, PubSub, IteratorMixin, Utils ) {
 
 		function TrackController( type, data ) {
 			this.model = ModelFactory(type, data);
 			this.view = new TrackView(this.onEvent.bind(this));
-			this.childTracks = [];
+			this.init();
 			this.setNestingLevel(1);
 			this.hookGlobalEvents();
 		}
+
+		Utils.mixFromTo( IteratorMixin, TrackController.prototype);
 
 		TrackController.prototype.hookGlobalEvents = function() {
 			this._onPlayerPlay = function(track){
@@ -41,9 +45,6 @@ define([
 
 		TrackController.prototype.show = function() {
 			this.view.render(this.getModelData());
-			for ( var i=0; i<this.childTracks.length; i++ ) {
-				this.childTracks[i].show();
-			}
 			this.hookModelEvents();
 		};
 
@@ -76,6 +77,11 @@ define([
 		TrackController.prototype.destroy = function() {
 			this.view.destroy();
 			PubSub.off("player:play", this._onPlayerPlay, this);
+
+			// remove children
+			for (var i=0;i<this.childTracks.length;i++) {
+				this.childTracks[i].destroy();
+			}
 		};
 
 		return TrackController;

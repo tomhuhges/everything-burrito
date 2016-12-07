@@ -10,6 +10,7 @@ define([
 		TrackModel.init = function( data ){
 			PubSubMixin.init.call(this);
 			this.attributes = data || {};
+			this.attributes.isPlayable = true;
 			return this;
 		}
 

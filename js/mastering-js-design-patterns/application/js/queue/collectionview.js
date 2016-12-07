@@ -6,6 +6,7 @@ define([], function() {
 		while ( track = tracksIterator.next().value) {
 			track.show();
 		}
+		tracksIterator.reset()
 	};
 
 	return TracksView;
