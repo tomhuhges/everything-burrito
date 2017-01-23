@@ -63,9 +63,10 @@ redux (usually) has just one store that contains all of the app's data. when a c
 the store should be created at the entry point for the app like this:
 
 ```js
+import { createStore } from 'redux'
 const store = createStore(reducer)
 // or
-import { combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux'
 const store = createStore(combineReducers(reducers))
 ```
 
