@@ -2,6 +2,12 @@
 
 - [component creation methods & when to use them](#component-creation-methods--when-to-use-them)
 - [container vs presentational components](#container-vs-presentational-components)
+redux
+- [key terms (store, actions & reducers)]()
+- [initializing]()
+
+
+----
 
 ### component creation methods & when to use them
 
@@ -99,3 +105,43 @@ function reducer(state = [], action) {
   }
 }
 ```
+
+----
+
+### Provider
+
+the entire app must be wrapped in react-redux's `Provider` component, passing the store as a prop to all components.
+
+```js
+<Provider store={this.props.store}>
+  <App />
+</Provider>
+```
+
+----
+
+### connect
+
+each container component must be wrapped in react-redux's `connect` function. it takes 2 optional arguments - the [`mapStateToProps`](#mapStateToProps) and [`mapDispatchToProps`](#mapDispatchToProps) callbacks which must be defined beforehand. connect returns a function, and that function then takes the component as an argument.
+
+```js
+class Container extends React.Component {
+  // ...
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Container)
+```
+
+----
+
+### mapStateToProps
+
+
+
+----
+
+### mapDispatchToProps
+
+
+
+----
