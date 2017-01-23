@@ -1,12 +1,22 @@
-### creating react components
+## things i learned on this course
 
-- React.createClass()
+- component creation methods & when to use them
+- container vs presentational components
+
+### component creation methods & when to use them
+
+- React.createClass() (largely deprecated)
 - class extends React.Component
 - stateless function
 
-##### React.createClass()
+| class | stateless function |
+|=======|====================|
+|when you need access to: | everywhere else |
+| - state |   |
+| - refs  |   |
+| - lifecycle methods |   |
 
-largely deprecated
+##### React.createClass()
 
 ```js
 var Welcome = React.createClass({
@@ -35,19 +45,11 @@ const Welcome = (props) =>
 
 ----
 
-### when to use component creation method
-
-use class when you need access to:  
-- state
-- refs
-- lifecycle methods
-
-use stateless functions:  
-- for everything else
-
-----
-
 ### container vs presentational components
 
 containers = smart = stateful
 presenters = dumb = stateless
+
+----
+
+## redux
