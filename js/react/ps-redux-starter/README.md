@@ -44,3 +44,10 @@ use class when you need access to:
 
 use stateless functions:  
 - for everything else
+
+----
+
+### container vs presentational components
+
+containers = smart = stateful
+presenters = dumb = stateless
