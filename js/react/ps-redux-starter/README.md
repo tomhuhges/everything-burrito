@@ -136,12 +136,41 @@ export default connect(mapStateToProps, mapDispatchToProps)(Container)
 
 ### mapStateToProps
 
+this function determines the state you want to expose to the container component.
 
+```js
+function mapStateToProps(state){
+  return { data: state }
+}
+// inside component use this.props.data
+
+// or restrict the parts of the state to expose
+function mapStateToProps(state){
+  return {
+    name: state.name,
+    address: state.address    
+  }
+}
+// inside component use this.props.name, this.props.address
+```
 
 ----
 
 ### mapDispatchToProps
 
+this function determines the actions you want to expose to the container component. you can use redux's `bindActionCreators` function to
 
+```js
+import * as actions from './actions'
+// ...
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+// inside component use this.props.actions.actionName
+```
 
 ----
+
+### data flow
