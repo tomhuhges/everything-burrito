@@ -82,8 +82,8 @@ function reducer(state = [], action) {
   switch(action.type) {
     case: ACTION_NAME:
       return [...state,
-			Object.assign({}, action.data)
-			]
+        Object.assign({}, action.data)
+      ]
     // ...
   }
 }
