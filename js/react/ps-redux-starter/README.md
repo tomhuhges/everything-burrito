@@ -54,4 +54,37 @@ presenters = dumb = stateless
 
 ## redux
 
-###
+### key terms (store, actions & reducers)
+
+##### the store
+
+redux (usually) has just one store that contains all of the app's data. when a container component wants to change the state, the store is notified, changes its state, and then lets components know what the new state is.
+
+##### actions
+these are the things that notify the store when a state-changing event happens.
+
+they look like this:
+
+```js
+{
+  type: ACTION_NAME,
+  data: { info: 'some data'}
+}
+```
+
+##### reducers
+reducers are the things that change the store's state. they are functions that take the current state of the store and an action, and return the new state accordingly.
+
+they look like this:
+
+```js
+function reducer(state = [], action) {
+  switch(action.type) {
+    case: ACTION_NAME:
+      return [...state,
+			Object.assign({}, action.data)
+			]
+    // ...
+  }
+}
+```
