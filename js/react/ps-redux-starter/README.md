@@ -4,7 +4,11 @@
 - [container vs presentational components](#container-vs-presentational-components)
 redux
 - [key terms (store, actions & reducers)]()
-- [initializing]()
+- [Provider]()
+- [connect]()
+- [mapStateToProps]()
+- [mapDispatchToProps]()
+- [data flow]()
 
 
 ----
