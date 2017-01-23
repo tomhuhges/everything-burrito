@@ -178,3 +178,11 @@ function mapDispatchToProps(dispatch) {
 ----
 
 ### data flow
+
+when an event happens (such as user input), the callback for the event will dispatch the relevant action from this.props.actions
+
+the action will then send the action type and new data to the reducer.
+
+the reducer updates the store depending on the action type and the store then notifies all of the connected components of the new state.
+
+if they need to re-render because of the state change, they will and the view will be updated.
