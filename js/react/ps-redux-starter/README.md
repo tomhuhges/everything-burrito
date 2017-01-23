@@ -1,7 +1,7 @@
 ## things i learned on this course
 
-- component creation methods & when to use them
-- container vs presentational components
+- [component creation methods & when to use them](#component-creation-methods--when-to-use-them)
+- [container vs presentational components](#container-vs-presentational-components)
 
 ### component creation methods & when to use them
 
@@ -10,7 +10,7 @@
 - stateless function
 
 | class | stateless function |
-|=======|====================|
+|---|---|
 |when you need access to: | everywhere else |
 | - state |   |
 | - refs  |   |
@@ -47,9 +47,11 @@ const Welcome = (props) =>
 
 ### container vs presentational components
 
-containers = smart = stateful
+containers = smart = stateful  
 presenters = dumb = stateless
 
 ----
 
 ## redux
+
+###
