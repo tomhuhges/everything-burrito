@@ -60,6 +60,15 @@ presenters = dumb = stateless
 
 redux (usually) has just one store that contains all of the app's data. when a container component wants to change the state, the store is notified, changes its state, and then lets components know what the new state is.
 
+the store should be created at the entry point for the app like this:
+
+```js
+const store = createStore(reducer)
+// or
+import { combineReducers } from 'redux'
+const store = createStore(combineReducers(reducers))
+```
+
 ##### actions
 these are the things that notify the store when a state-changing event happens.
 
@@ -81,7 +90,8 @@ they look like this:
 function reducer(state = [], action) {
   switch(action.type) {
     case: ACTION_NAME:
-      return [...state,
+      return [
+        ...state,
         Object.assign({}, action.data)
       ]
     // ...
