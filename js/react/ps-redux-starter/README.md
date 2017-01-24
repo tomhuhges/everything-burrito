@@ -1,17 +1,23 @@
-## things i learned on this course
+# things i learned on this course
 
+*react*  
 - [component creation methods & when to use them](#component-creation-methods--when-to-use-them)
 - [container vs presentational components](#container-vs-presentational-components)
-redux
-- [key terms (store, actions & reducers)]()
-- [Provider]()
-- [connect]()
-- [mapStateToProps]()
-- [mapDispatchToProps]()
-- [data flow]()
+*redux*  
+- [the store](#the-store)
+- [actions](#actions)
+- [reducers](#reducers)  
+*react-redux*  
+- [Provider](#Provider)
+- [connect](#connect)
+- [mapStateToProps](#mapStateToProps)
+- [mapDispatchToProps](#mapDispatchToProps)
+- [data flow](#data-flow)
 
 
 ----
+
+# react
 
 ### component creation methods & when to use them
 
@@ -62,9 +68,7 @@ presenters = dumb = stateless
 
 ----
 
-## redux
-
-### key terms (store, actions & reducers)
+# redux
 
 ##### the store
 
@@ -112,9 +116,11 @@ function reducer(state = [], action) {
 
 ----
 
+#react-redux
+
 ### Provider
 
-the entire app must be wrapped in react-redux's `Provider` component, passing the store as a prop to all components.
+the `Provider` component provides a way to make the redux store available as a prop to all components.
 
 ```js
 <Provider store={this.props.store}>
@@ -126,13 +132,12 @@ the entire app must be wrapped in react-redux's `Provider` component, passing th
 
 ### connect
 
-each container component must be wrapped in react-redux's `connect` function. it takes 2 optional arguments - the [`mapStateToProps`](#mapStateToProps) and [`mapDispatchToProps`](#mapDispatchToProps) callbacks which must be defined beforehand. connect returns a function, and that function then takes the component as an argument.
+each container (stateful) component must be wrapped in react-redux's `connect` function. it takes 2 optional arguments - the [`mapStateToProps`](#mapStateToProps) and [`mapDispatchToProps`](#mapDispatchToProps) callbacks which must be defined beforehand. connect returns a function, and that function then takes the component as an argument.
 
 ```js
 class Container extends React.Component {
   // ...
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Container)
 ```
 
@@ -140,15 +145,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Container)
 
 ### mapStateToProps
 
-this function determines the state you want to expose to the container component.
+this function determines the state you want to expose to the container component. technically you could just return the entire state but in large apps this would kill performance. it's better to restrict to only the parts of the state that need exposing:
 
 ```js
-function mapStateToProps(state){
-  return { data: state }
-}
-// inside component use this.props.data
-
-// or restrict the parts of the state to expose
 function mapStateToProps(state){
   return {
     name: state.name,
@@ -162,10 +161,13 @@ function mapStateToProps(state){
 
 ### mapDispatchToProps
 
-this function determines the actions you want to expose to the container component. you can use redux's `bindActionCreators` function to
+this function determines the actions you want to expose to the container component. you can use redux's `bindActionCreators` function to inject dispatch functionality into each action:
 
 ```js
+import { bindActionCreators } from 'redux'
 import * as actions from './actions'
+// ...
+class Container extends React.Component { ... }
 // ...
 function mapDispatchToProps(dispatch) {
   return {
@@ -175,14 +177,27 @@ function mapDispatchToProps(dispatch) {
 // inside component use this.props.actions.actionName
 ```
 
+when using bindActionCreators, you can also use the shorthand of just passing an object of actions, where each action will automatically be run through bindActionCreators with dispatch functionality injected:
+
+```js
+import * as actions from './actions'
+// ...
+export default connect(mapStateToProps, actions)(Container)
+// inside component use this.props.actions.actionName
+```
+
 ----
 
 ### data flow
 
 when an event happens (such as user input), the callback for the event will dispatch the relevant action from this.props.actions
 
-the action will then send the action type and new data to the reducer.
+the action will then send the action type and new data to the corresponding reducer.
 
-the reducer updates the store depending on the action type and the store then notifies all of the connected components of the new state.
+the reducer takes the current state and the new data and updates the store with a new version of the state. the store then notifies all of the connected components that the state has changed.
 
 if they need to re-render because of the state change, they will and the view will be updated.
+
+----
+
+###
