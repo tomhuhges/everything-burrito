@@ -1,19 +1,18 @@
 # things i learned on this course
 
-*react*  
+**react**  
 - [component creation methods & when to use them](#component-creation-methods--when-to-use-them)
-- [container vs presentational components](#container-vs-presentational-components)
-*redux*  
+- [container vs presentational components](#container-vs-presentational-components)  
+**redux**  
 - [the store](#the-store)
 - [actions](#actions)
 - [reducers](#reducers)  
-*react-redux*  
+**react-redux**   
 - [Provider](#Provider)
 - [connect](#connect)
 - [mapStateToProps](#mapStateToProps)
 - [mapDispatchToProps](#mapDispatchToProps)
 - [data flow](#data-flow)
-
 
 ----
 
